@@ -16,53 +16,55 @@ import FooterConfigurationForm from './FooterConfigurationForm';
 import './footer_configuration.css';
 
 const messages = defineMessages({
-  menuItemsHeader: {
-    id: 'dropdownmenu-menuitems-header',
-    defaultMessage: 'Menu items',
+  footerItemsHeader: {
+    id: 'editablefooter-items-header',
+    defaultMessage: 'Footer columns',
   },
-  addMenuPath: {
-    id: 'dropdownmenu-add-rootpath',
-    defaultMessage: 'Add menu path',
+  addFooterPath: {
+    id: 'editablefooter-add-rootpath',
+    defaultMessage: 'Add footer path',
   },
-  deleteMenuPath: {
-    id: 'dropdownmenu-delete-menupath',
-    defaultMessage: 'Delete menu path',
+  deleteFooterPath: {
+    id: 'editablefooter-delete-footerpath',
+    defaultMessage: 'Delete footer path',
   },
   deleteButton: {
-    id: 'dropdownmenu-delete-button',
+    id: 'editablefooter-delete-button',
     defaultMessage: 'Delete',
   },
   root_path: {
-    id: 'dropdownmenu-rootpath',
+    id: 'editablefooter-rootpath',
     defaultMessage: 'Root path',
   },
-  addMenuItem: {
-    id: 'dropdownmenu-addmenuitem',
-    defaultMessage: 'Add menu item',
+  addFooterColumn: {
+    id: 'editablefooter-addfootercolumn',
+    defaultMessage: 'Add footer column',
   },
   moveMenuItemUp: {
-    id: 'dropdownmenu-move-menuitem-up',
-    defaultMessage: 'Move menu item up',
+    id: 'editablefooter-move-column-up',
+    defaultMessage: 'Move column up',
   },
   moveMenuItemDown: {
-    id: 'dropdownmenu-move-menuitem-down',
-    defaultMessage: 'Move menu item down',
+    id: 'editablefooter-move-column-down',
+    defaultMessage: 'Move column down',
   },
-  emptyActiveMenuPath: {
-    id: 'dropdownmenu-emptyActiveMenuPath',
-    defaultMessage: 'Select a menu path',
+  emptyActiveFooterPath: {
+    id: 'editablefooter-emptyActiveFooterPath',
+    defaultMessage: 'Select or add a footer path',
   },
-  emptyActiveMenuItem: {
-    id: 'dropdownmenu-emptyActiveMenuItem',
-    defaultMessage: 'Select a menu item',
+  emptyActiveFooterColumn: {
+    id: 'editablefooter-emptyActiveFooterColumn',
+    defaultMessage: 'Select or add a footer column',
   },
 });
 
 const defaultMenuItem = (title) => ({
+  id: new Date().getTime(),
   title,
   visible: true,
-  mode: 'simpleLink',
-  linkUrl: [],
+  showSocial: false,
+  titleLink: [],
+  text: null,
 });
 
 const defaultRootMenu = (title) => ({
@@ -70,7 +72,7 @@ const defaultRootMenu = (title) => ({
   items: [defaultMenuItem(title)],
 });
 
-const defaultMenuConfiguration = [defaultRootMenu];
+const defaultMenuConfiguration = [defaultRootMenu('Title')];
 
 const FooterConfigurationWidget = ({
   value,
@@ -81,23 +83,24 @@ const FooterConfigurationWidget = ({
   description,
 }) => {
   const intl = useIntl();
-  const [menuConfiguration, setMenuConfiguration] = useState(
+  const [footerConfiguration, setFooterConfiguration] = useState(
     value ? JSON.parse(value) : defaultMenuConfiguration,
   );
-  const [activeMenu, setActiveMenu] = useState(0);
-  const [activeMenuItem, setActiveMenuItem] = useState(0);
+
+  const [activeFooter, setActiveFooter] = useState(0);
+  const [activeFooterColumn, setActiveFooterColumn] = useState(0);
 
   const handleChangeConfiguration = (value) => {
-    setMenuConfiguration(value);
+    setFooterConfiguration(value);
     onChange(id, JSON.stringify(value));
   };
 
-  const addMenuPath = (e) => {
+  const addFooterPath = (e) => {
     e.preventDefault();
-    const menuItemsNumber = menuConfiguration.length;
+    const menuItemsNumber = footerConfiguration.length;
     const menuItem = `/tab${menuItemsNumber}`;
     let newMenuConfiguration = [
-      ...menuConfiguration,
+      ...footerConfiguration,
       {
         ...defaultRootMenu(`Tab ${menuItemsNumber}`),
         rootPath: menuItem,
@@ -105,63 +108,63 @@ const FooterConfigurationWidget = ({
     ];
 
     handleChangeConfiguration(newMenuConfiguration);
-    setActiveMenu(newMenuConfiguration.length - 1);
+    setActiveFooter(newMenuConfiguration.length - 1);
   };
 
-  const deleteMenuPath = (e, index) => {
+  const deleteFooterPath = (e, index) => {
     e.preventDefault();
-    let newMenuConfiguration = [...menuConfiguration];
+    let newMenuConfiguration = [...footerConfiguration];
     newMenuConfiguration.splice(index, 1);
 
-    if (activeMenu === index) {
-      setTimeout(() => setActiveMenu(index > 0 ? index - 1 : 0), 0);
+    if (activeFooter === index) {
+      setTimeout(() => setActiveFooter(index > 0 ? index - 1 : 0), 0);
     }
 
     handleChangeConfiguration(newMenuConfiguration);
   };
 
-  const deleteMenuItem = (e, pathIndex, index) => {
+  const deleteFooterColumn = (e, pathIndex, index) => {
     e.preventDefault();
-    let newMenuConfiguration = [...menuConfiguration];
+    let newMenuConfiguration = [...footerConfiguration];
     newMenuConfiguration[pathIndex].items.splice(index, 1);
 
-    if (activeMenuItem === index) {
-      setTimeout(() => setActiveMenuItem(index > 0 ? index - 1 : 0), 0);
+    if (activeFooterColumn === index) {
+      setTimeout(() => setActiveFooterColumn(index > 0 ? index - 1 : 0), 0);
     }
 
     handleChangeConfiguration(newMenuConfiguration);
   };
 
-  const addMenuItem = (e, pathIndex) => {
+  const addFooterColumn = (e, pathIndex) => {
     e.preventDefault();
-    let newMenuConfiguration = [...menuConfiguration];
+    let newMenuConfiguration = [...footerConfiguration];
     newMenuConfiguration[pathIndex].items = [
       ...newMenuConfiguration[pathIndex].items,
       defaultMenuItem(`New ${newMenuConfiguration[pathIndex].items.length}`),
     ];
 
-    setActiveMenuItem(newMenuConfiguration[pathIndex].items.length - 1);
+    setActiveFooterColumn(newMenuConfiguration[pathIndex].items.length - 1);
     handleChangeConfiguration(newMenuConfiguration);
   };
 
-  const onChangeMenuPath = (index, menu) => {
-    let newMenuConfiguration = [...menuConfiguration];
+  const onChangeFooterPath = (index, menu) => {
+    let newMenuConfiguration = [...footerConfiguration];
     newMenuConfiguration[index] = menu;
 
     handleChangeConfiguration(newMenuConfiguration);
   };
 
-  const onChangeMenuItem = (pathIndex, menuItemIndex, menuItem) => {
-    let newMenuConfiguration = [...menuConfiguration];
-    newMenuConfiguration[pathIndex].items[menuItemIndex] = menuItem;
+  const onChangeFooterColumn = (pathIndex, columnIndex, column) => {
+    let newFooterConfiguration = [...footerConfiguration];
+    newFooterConfiguration[pathIndex].items[columnIndex] = column;
 
-    handleChangeConfiguration(newMenuConfiguration);
+    handleChangeConfiguration(newFooterConfiguration);
   };
 
   const moveMenuItem = (e, pathIndex, menuItemIndex, direction) => {
     e.preventDefault();
     const up = direction === 'up';
-    let newMenuConfiguration = [...menuConfiguration];
+    let newMenuConfiguration = [...footerConfiguration];
 
     let menuItem = newMenuConfiguration[pathIndex].items[menuItemIndex];
     newMenuConfiguration[pathIndex].items.splice(menuItemIndex, 1);
@@ -175,45 +178,54 @@ const FooterConfigurationWidget = ({
   };
 
   return (
-    <div className="menu-configuration-widget">
+    <div className="footer-configuration-widget">
       <Form.Field inline id={id}>
         <Grid>
-          <Grid.Row>
-            <Grid.Column width="12">
+          {/* <Grid.Row><Grid.Column width="12">
               <div className="wrapper">
-                <label htmlFor="menu-configuration">{title}</label>
+                <label htmlFor="footer-configuration">{title}</label>
               </div>
-            </Grid.Column>
-            <Grid.Column width="12" className="menu-configuration-widget">
-              <div id="menu-configuration">
-                <Menu pointing secondary className="menu-path-menu">
-                  {menuConfiguration.map((menu, idx) => (
+            </Grid.Column></Grid.Row> */}
+          {description && (
+            <Grid.Row>
+              <Grid.Column stretched width="12">
+                <p className="help">{description}</p>
+              </Grid.Column>
+            </Grid.Row>
+          )}
+          <Grid.Row>
+            <Grid.Column width="12" className="footer-configuration-widget">
+              <div id="footer-configuration">
+                <Menu pointing secondary className="footer-path">
+                  {footerConfiguration.map((footer, idx) => (
                     <Menu.Item
-                      key={`menu-path-${idx}`}
-                      name={menu.rootPath}
-                      active={activeMenu === idx}
+                      key={`footer-path-${idx}`}
+                      name={footer.rootPath}
+                      active={activeFooter === idx}
                       onClick={() => {
-                        setActiveMenu(idx);
-                        setActiveMenuItem(0);
+                        setActiveFooter(idx);
+                        setActiveFooterColumn(0);
                       }}
                     >
-                      <span>{flattenToAppURL(menu.rootPath)}</span>
+                      <span>{flattenToAppURL(footer.rootPath)}</span>
                     </Menu.Item>
                   ))}
                   <Menu.Item
                     active={false}
-                    name={intl.formatMessage(messages.addMenuPath)}
-                    onClick={addMenuPath}
+                    name={intl.formatMessage(messages.addFooterPath)}
+                    onClick={addFooterPath}
                   >
                     <Icon name="plus" />
                   </Menu.Item>
                 </Menu>
+
                 <Segment>
-                  {activeMenu > -1 && activeMenu < menuConfiguration.length ? (
+                  {activeFooter > -1 &&
+                  activeFooter < footerConfiguration.length ? (
                     <Grid>
                       <Grid.Column
                         width={12}
-                        className="dropdownmenu-rootpath-segment"
+                        className="footer-rootpath-segment"
                       >
                         <TextWidget
                           id="rootPath"
@@ -221,11 +233,11 @@ const FooterConfigurationWidget = ({
                           description=""
                           required={true}
                           value={flattenToAppURL(
-                            menuConfiguration[activeMenu].rootPath,
+                            footerConfiguration[activeFooter].rootPath,
                           )}
                           onChange={(id, value) => {
-                            onChangeMenuPath(activeMenu, {
-                              ...menuConfiguration[activeMenu],
+                            onChangeFooterPath(activeFooter, {
+                              ...footerConfiguration[activeFooter],
                               rootPath: value?.length ? value : '/',
                             });
                           }}
@@ -233,7 +245,7 @@ const FooterConfigurationWidget = ({
                         <Form.Field
                           inline
                           className="delete wide"
-                          id="menupath-delete"
+                          id="footerpath-delete"
                         >
                           <Grid>
                             <Grid.Row stretched>
@@ -244,8 +256,10 @@ const FooterConfigurationWidget = ({
                                 <Button
                                   icon="trash"
                                   negative
-                                  onClick={(e) => deleteMenuPath(e, activeMenu)}
-                                  id="delete-menupath"
+                                  onClick={(e) =>
+                                    deleteFooterPath(e, activeFooter)
+                                  }
+                                  id="delete-footerpath"
                                   content={intl.formatMessage(
                                     messages.deleteButton,
                                   )}
@@ -256,22 +270,22 @@ const FooterConfigurationWidget = ({
                         </Form.Field>
                       </Grid.Column>
                       <Grid.Column width={4}>
-                        <Header as="h2" className="dropdownmenu-items-header">
-                          {intl.formatMessage(messages.menuItemsHeader)}
+                        <Header as="h2" className="editablefooter-items-header">
+                          {intl.formatMessage(messages.footerItemsHeader)}
                         </Header>
                         <Menu
                           fluid
                           vertical
                           tabular
-                          className="menu-items-menu"
+                          className="footer-items-menu"
                         >
-                          {menuConfiguration[activeMenu].items?.map(
-                            (menuItem, idx) => (
+                          {footerConfiguration[activeFooter].items?.map(
+                            (footerColumn, idx) => (
                               <Menu.Item
-                                key={`menu-item-${idx}`}
-                                name={menuItem.title}
-                                active={activeMenuItem === idx}
-                                onClick={() => setActiveMenuItem(idx)}
+                                key={`footer-item-${idx}`}
+                                name={footerColumn.title}
+                                active={activeFooterColumn === idx}
+                                onClick={() => setActiveFooterColumn(idx)}
                               >
                                 <Button.Group vertical className="move-buttons">
                                   <Button
@@ -282,13 +296,13 @@ const FooterConfigurationWidget = ({
                                       messages.moveMenuItemUp,
                                     )}
                                     onClick={(e) =>
-                                      moveMenuItem(e, activeMenu, idx, 'up')
+                                      moveMenuItem(e, activeFooter, idx, 'up')
                                     }
                                   />
                                   <Button
                                     disabled={
                                       idx ===
-                                      menuConfiguration[activeMenu].items
+                                      footerConfiguration[activeFooter].items
                                         .length -
                                         1
                                     }
@@ -298,63 +312,70 @@ const FooterConfigurationWidget = ({
                                       messages.moveMenuItemDown,
                                     )}
                                     onClick={(e) =>
-                                      moveMenuItem(e, activeMenu, idx, 'down')
+                                      moveMenuItem(e, activeFooter, idx, 'down')
                                     }
                                   />
                                 </Button.Group>
-                                <span>{menuItem.title}</span>
+                                <span>{footerColumn.title}</span>
                               </Menu.Item>
                             ),
                           )}
                           <Menu.Item
-                            name={intl.formatMessage(messages.addMenuItem)}
-                            onClick={(e) => addMenuItem(e, activeMenu)}
+                            name={intl.formatMessage(messages.addFooterColumn)}
+                            onClick={(e) => addFooterColumn(e, activeFooter)}
                           >
                             <Icon name="plus" />
                           </Menu.Item>
                         </Menu>
                       </Grid.Column>
                       <Grid.Column stretched width={8}>
-                        {activeMenuItem > -1 &&
-                        activeMenuItem <
-                          menuConfiguration[activeMenu].items?.length ? (
-                          <MenuConfigurationForm
-                            id={`${activeMenu}-${activeMenuItem}`}
-                            menuItem={
-                              menuConfiguration[activeMenu].items[
-                                activeMenuItem
+                        {activeFooterColumn > -1 &&
+                        activeFooterColumn <
+                          footerConfiguration[activeFooter].items?.length ? (
+                          <FooterConfigurationForm
+                            id={
+                              footerConfiguration[activeFooter].items[
+                                activeFooterColumn
+                              ].id
+                            }
+                            footerColumn={
+                              footerConfiguration[activeFooter].items[
+                                activeFooterColumn
                               ]
                             }
-                            onChange={(menu) =>
-                              onChangeMenuItem(activeMenu, activeMenuItem, menu)
+                            onChange={(column) =>
+                              onChangeFooterColumn(
+                                activeFooter,
+                                activeFooterColumn,
+                                column,
+                              )
                             }
-                            deleteMenuItem={(e) =>
-                              deleteMenuItem(e, activeMenu, activeMenuItem)
+                            deleteFooterColumn={(e) =>
+                              deleteFooterColumn(
+                                e,
+                                activeFooter,
+                                activeFooterColumn,
+                              )
                             }
                           />
                         ) : (
                           <span>
-                            {intl.formatMessage(messages.emptyActiveMenuItem)}
+                            {intl.formatMessage(
+                              messages.emptyActiveFooterColumn,
+                            )}
                           </span>
                         )}
                       </Grid.Column>
                     </Grid>
                   ) : (
                     <span>
-                      {intl.formatMessage(messages.emptyActiveMenuPath)}
+                      {intl.formatMessage(messages.emptyActiveFooterPath)}
                     </span>
                   )}
                 </Segment>
               </div>
             </Grid.Column>
           </Grid.Row>
-          {description && (
-            <Grid.Row stretched>
-              <Grid.Column stretched width="12">
-                <p className="help">{description}</p>
-              </Grid.Column>
-            </Grid.Row>
-          )}
         </Grid>
       </Form.Field>
     </div>

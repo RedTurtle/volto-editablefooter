@@ -1,8 +1,16 @@
-.menu-configuration-widget .menu-blocks-container {
+.footer-configuration-widget .menu-blocks-container,
+.cms-ui .footer-configuration-widget .menu-blocks-container {
   padding: 2em;
 }
 
-.menu-configuration-widget
+.footer-configuration-widget
+  .menu-blocks-container
+  .block
+  .toolbar-inner
+  .ui.input
+  input,
+.cms-ui
+  .footer-configuration-widget
   .menu-blocks-container
   .block
   .toolbar-inner
@@ -11,26 +19,31 @@
   height: unset;
 }
 
-#menu-configuration {
+#footer-configuration,
+.cms-ui #footer-configuration {
   margin: 1em 0;
 }
 
-.menu-configuration-widget .ui.header.dropdownmenu-items-header {
+.footer-configuration-widget .ui.header.editablefooter-items-header,
+.cms-ui .footer-configuration-widget .ui.header.editablefooter-items-header {
   font-size: 1.2rem;
   opacity: 0.8;
 }
 
-.menu-configuration-widget .ui.menu.menu-path-menu .item button.mini {
+.footer-configuration-widget .ui.menu.footer-path .item button.mini,
+.cms-ui .footer-configuration-widget .ui.menu.footer-path .item button.mini {
   font-size: 0.78571429rem;
 }
 
-.menu-configuration-widget .ui.menu.menu-items-menu h2 {
+.footer-configuration-widget .ui.menu.footer-items-menu h2,
+.cms-ui .footer-configuration-widget .ui.menu.footer-items-menu h2 {
   padding: 0 1rem;
   margin-bottom: 1rem;
   font-size: 1em;
 }
 
-.menu-configuration-widget .ui.menu.menu-items-menu .item {
+.footer-configuration-widget .ui.menu.footer-items-menu .item,
+.cms-ui .footer-configuration-widget .ui.menu.footer-items-menu .item {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -38,17 +51,29 @@
   padding-left: 0.75rem;
 }
 
-.menu-configuration-widget .ui.menu.menu-items-menu .item span {
+.footer-configuration-widget .ui.menu.footer-items-menu .item span,
+.cms-ui .footer-configuration-widget .ui.menu.footer-items-menu .item span {
   margin-left: 0.5rem;
 }
 
-.menu-configuration-widget .ui.menu.menu-items-menu .item button.ui.button {
+.footer-configuration-widget .ui.menu.footer-items-menu .item button.ui.button,
+.cms-ui
+  .footer-configuration-widget
+  .ui.menu.footer-items-menu
+  .item
+  button.ui.button {
   padding: 0.5rem;
   text-align: center;
 }
 
-.menu-configuration-widget
-  .ui.menu.menu-items-menu
+.footer-configuration-widget
+  .ui.menu.footer-items-menu
+  .item
+  button.ui.button
+  i.icon,
+.cms-ui
+  .footer-configuration-widget
+  .ui.menu.footer-items-menu
   .item
   button.ui.button
   i.icon {
@@ -58,30 +83,38 @@
   transform: rotate(90deg);
 }
 
-.menu-configuration-widget .ui.menu.menu-path-menu .item span,
-.menu-configuration-widget .ui.menu.menu-items-menu .item span {
+.footer-configuration-widget .ui.menu.footer-path .item span,
+.footer-configuration-widget .ui.menu.footer-items-menu .item span,
+.cms-ui .footer-configuration-widget .ui.menu.footer-path .item span,
+.cms-ui .footer-configuration-widget .ui.menu.footer-items-menu .item span {
   display: inline-block;
   min-width: 3rem;
   flex: 1;
 }
 
-.menu-configuration-widget .ui.menu.menu-items-menu .item span {
+.footer-configuration-widget .ui.menu.footer-items-menu .item span,
+.cms-ui .footer-configuration-widget .ui.menu.footer-items-menu .item span {
   padding-left: 0.5rem;
 }
 
-.menu-configuration-widget #menupath-delete.field.delete .column,
-.menu-configuration-widget #menu-delete.field.delete .column {
+.footer-configuration-widget #footerpath-delete.field.delete .column,
+.footer-configuration-widget #column-delete.field.delete .column,
+.cms-ui .footer-configuration-widget #footerpath-delete.field.delete .column,
+.cms-ui .footer-configuration-widget #column-delete.field.delete .column {
   justify-content: center;
 }
 
-button#delete-menupath,
-button#delete-menuitem {
+button#delete-footerpath,
+button#delete-footercolumn,
+.cms-ui button#delete-footerpath,
+.cms-ui button#delete-footercolumn {
   display: inline-block;
   flex-grow: 0;
   align-self: self-start;
 }
 
-.menu-configuration-widget .dropdownmenu-rootpath-segment {
+.footer-configuration-widget .footer-rootpath-segment,
+.cms-ui.footer-configuration-widget .footer-rootpath-segment {
   padding-bottom: 3rem;
   border-bottom: 1px solid #c7d5d8;
   margin-bottom: 3rem;

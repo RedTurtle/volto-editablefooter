@@ -7,7 +7,7 @@ export { FooterConfigurationWidget, getEditableFooter };
 export default (config) => {
   config.widgets.id = {
     ...config.widgets.id,
-    footer_configuration: FooterConfigurationWidget,
+    footer_columns: FooterConfigurationWidget,
   };
 
   config.addonReducers = {
