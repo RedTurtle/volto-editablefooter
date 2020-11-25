@@ -1,0 +1,79 @@
+[
+  {
+    "rootPath": "/",
+    "items": [
+      {
+        "title": "Prima colonna",
+        "visible": true,
+        "text":{
+          "blocks": [
+            {
+              "key": "el74l",
+              "text": "Quisque molestie dapibus libero non pellentesque.",
+              "type": "unstyled",
+              "depth": 0,
+              "inlineStyleRanges": [],
+              "entityRanges": [],
+              "data": {}
+            }
+          ],
+          "entityMap": {}
+        }
+      },
+      {
+        "title": "Seconda colonna",
+        "visible": true,
+        "text":{
+          "blocks": [
+            {
+              "key": "el74l",
+              "text": "Quisque molestie dapibus libero non pellentesque.",
+              "type": "unstyled",
+              "depth": 0,
+              "inlineStyleRanges": [],
+              "entityRanges": [],
+              "data": {}
+            }
+          ],
+          "entityMap": {}
+        }
+      },
+      {
+        "title": "Terza colonna",
+        "visible": true,
+        "text":{
+          "blocks": [
+            {
+              "key": "el74l",
+              "text": "Quisque molestie dapibus libero non pellentesque.",
+              "type": "unstyled",
+              "depth": 0,
+              "inlineStyleRanges": [],
+              "entityRanges": [],
+              "data": {}
+            }
+          ],
+          "entityMap": {}
+        }
+      },
+      {
+        "title": "Quarta colonna",
+        "visible": true,
+        "text":{
+          "blocks": [
+            {
+              "key": "el74l",
+              "text": "Quisque molestie dapibus libero non pellentesque.",
+              "type": "unstyled",
+              "depth": 0,
+              "inlineStyleRanges": [],
+              "entityRanges": [],
+              "data": {}
+            }
+          ],
+          "entityMap": {}
+        }
+      }
+    ]
+  }
+]
