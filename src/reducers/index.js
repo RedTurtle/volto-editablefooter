@@ -1,9 +1,9 @@
 /**
  * Dropdown menu items reducer.
- * @module reducers/editableFooterReducer
+ * @module reducers/editableFooterColumnsReducer
  */
 
-import { GET_FOOTER } from '../actions';
+import { GET_EDITABLE_FOOTER_COLUMNS } from '../actions';
 
 const initialState = {
   error: null,
@@ -12,20 +12,26 @@ const initialState = {
   loadingResults: false,
 };
 
-export const editableFooterReducer = (state = initialState, action = {}) => {
+export const editableFooterColumnsReducer = (
+  state = initialState,
+  action = {},
+) => {
   switch (action.type) {
-    case `${GET_FOOTER}_PENDING`:
+    case `${GET_EDITABLE_FOOTER_COLUMNS}_PENDING`:
       return {
         ...state,
         loadingResults: true,
       };
-    case `${GET_FOOTER}_SUCCESS`:
+    case `${GET_EDITABLE_FOOTER_COLUMNS}_SUCCESS`:
       return {
         ...state,
-        result: action.result,
+        result:
+          typeof action.result === 'string'
+            ? JSON.parse(action.result)
+            : action.result,
         loadingResults: false,
       };
-    case `${GET_FOOTER}_FAIL`:
+    case `${GET_EDITABLE_FOOTER_COLUMNS}_FAIL`:
       return {
         ...state,
         error: action.error,

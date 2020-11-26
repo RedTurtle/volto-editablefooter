@@ -1,8 +1,9 @@
-import { editableFooterReducer } from './reducers';
+import { editableFooterColumnsReducer } from './reducers';
 import FooterConfigurationWidget from './widget/FooterConfigurationWidget';
-import { getEditableFooter } from './actions';
+import { getEditableFooterColumns } from './actions';
+import FooterColumns from './components/FooterColumns';
 
-export { FooterConfigurationWidget, getEditableFooter };
+export { FooterConfigurationWidget, getEditableFooterColumns, FooterColumns };
 
 export default (config) => {
   config.widgets.id = {
@@ -12,7 +13,7 @@ export default (config) => {
 
   config.addonReducers = {
     ...config.addonReducers,
-    editableFooter: editableFooterReducer,
+    editableFooterColumns: editableFooterColumnsReducer,
   };
 
   return config;

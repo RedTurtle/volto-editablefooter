@@ -1,79 +1,32 @@
-[
-  {
-    "rootPath": "/",
-    "items": [
+{
+  "@id": "http://localhost:8080/Plone/@controlpanels/editable-footer-settings",
+  "data": {
+    "footer_columns": "[{\"rootPath\":\"/\",\"items\":[{\"id\":1606322691459,\"title\":\"CONTATTI\",\"visible\":true,\"text\":{\"data\":\"<p><strong>Comune di Modena</strong><br />Piazza Grande 16 | 41121 Modena &ndash; Italia | P.I.00221940364</p>\\n<div class=\\\"link-list-wrapper\\\">\\n<ul class=\\\"footer-list clearfix link-list\\\">\\n<li><a class=\\\"list-item\\\" title=\\\"Contatta:Centralino\\\" href=\\\"tel:+39-059-20311\\\"><strong>Centralino</strong>&nbsp;:+39-059-20311</a></li>\\n<li><a class=\\\"list-item\\\" title=\\\"Contatta: E-mail\\\" href=\\\"mailto:retecivica@comune.modena.it\\\"><strong>E-mail</strong>: retecivica@comune.modena.it</a></li>\\n<li><a class=\\\"list-item\\\" title=\\\"Contatta:URP\\\" href=\\\"tel:+39-059-20311\\\"><strong>URP</strong>&nbsp;:+39-059-20312</a></li>\\n</ul>\\n</div>\"},\"titleLink\":[{\"@id\":\"/amministrazione\",\"@type\":\"Document\",\"CreationDate\":\"2020-06-17T15:26:20+02:00\",\"Creator\":\"admin\",\"Date\":\"2020-06-17T15:29:57+02:00\",\"Description\":\"Donec in consequat nunc. Duis semper fermentum lacus, ac condimentum justo auctor a. Nam erat erat, porta vel pharetra in, ullamcorper vel turpis.\",\"EffectiveDate\":\"2020-06-17T15:29:57+02:00\",\"ExpirationDate\":\"None\",\"ModificationDate\":\"2020-08-19T08:50:39+02:00\",\"Subject\":[],\"Title\":\"Amministrazione\",\"Type\":\"Pagina\",\"UID\":\"d43ea9a0774c4e10bdeee3a78e538f66\",\"author_name\":null,\"cmf_uid\":121,\"commentators\":[],\"created\":\"2020-06-17T13:26:20+00:00\",\"description\":\"Donec in consequat nunc. Duis semper fermentum lacus, ac condimentum justo auctor a. Nam erat erat, porta vel pharetra in, ullamcorper vel turpis.\",\"effective\":\"2020-06-17T13:29:57+00:00\",\"end\":null,\"exclude_from_nav\":false,\"expires\":\"2499-12-30T22:00:00+00:00\",\"getChiusura_procedimento_bando\":null,\"getDestinatariBando\":null,\"getIcon\":null,\"getId\":\"amministrazione\",\"getObjSize\":\"1 KB\",\"getPath\":\"/Plone/amministrazione\",\"getRemoteUrl\":null,\"getScadenza_bando\":null,\"getTipologia_bando\":null,\"getURL\":\"http://localhost:8080/Plone/amministrazione\",\"id\":\"amministrazione\",\"in_response_to\":null,\"is_folderish\":true,\"last_comment_date\":null,\"latitude\":null,\"listCreators\":[\"admin\"],\"location\":null,\"longitude\":null,\"meta_type\":\"Dexterity Container\",\"mime_type\":\"text/plain\",\"modified\":\"2020-08-19T06:50:39+00:00\",\"portal_type\":\"Document\",\"review_state\":\"published\",\"start\":null,\"sync_uid\":null,\"tassonomia_argomenti\":null,\"tipologia_documento\":null,\"tipologia_notizia\":null,\"title\":\"Amministrazione\",\"total_comments\":0}]},{\"id\":1606322714514,\"title\":\"Comunicare con il comune\",\"visible\":true,\"text\":{\"data\":\"<div class=\\\"pb-2 col-md-3 col-lg-3\\\">\\n<div class=\\\"link-list-wrapper\\\">\\n<ul class=\\\"footer-list clearfix link-list\\\">\\n<li><a class=\\\"list-item\\\" title=\\\"Vai alla pagina:Ufficio Relazioni con il Pubblico\\\" href=\\\"https://staging.comune.modena.it/comunicazione/urp\\\">Ufficio Relazioni con il Pubblico</a></li>\\n<li><a class=\\\"list-item\\\" title=\\\"Vai alla pagina:Suggerisci e segnala\\\" href=\\\"https://staging.comune.modena.it/comunicazione/suggerisci-e-segnala\\\">Suggerisci e segnala</a></li>\\n<li><a class=\\\"list-item\\\" title=\\\"Vai alla pagina:Redazione www\\\" href=\\\"https://staging.comune.modena.it/comunicazione/redazione-www\\\">Redazione www</a></li>\\n<li><a class=\\\"list-item\\\" title=\\\"Vai alla pagina:Elenco delle PEC\\\" href=\\\"https://staging.comune.modena.it/comunicazione/pec\\\">Elenco delle PEC</a></li>\\n<li><a class=\\\"list-item\\\" title=\\\"Vai alla pagina:Sala stampa\\\" href=\\\"https://staging.comune.modena.it/comunicazione/sala-stampa\\\">Sala stampa</a></li>\\n<li><a class=\\\"list-item\\\" title=\\\"Vai alla pagina:Newsletter UNOX1\\\" href=\\\"https://staging.comune.modena.it/comunicazione/newsletter\\\">Newsletter UNOX1</a></li>\\n<li><a class=\\\"list-item\\\" title=\\\"Vai alla pagina:Numeri di pubblica utilit&agrave;\\\" href=\\\"https://staging.comune.modena.it/comunicazione/numeri-utili\\\">Numeri di pubblica utilit&agrave;</a></li>\\n<li><a class=\\\"list-item\\\" title=\\\"Vai alla pagina:Mail\\\" href=\\\"https://staging.comune.modena.it/comunicazione/mail\\\">Mail</a></li>\\n</ul>\\n</div>\\n</div>\\n<div class=\\\"pb-2 col-md-3 col-lg-3\\\">&nbsp;</div>\\n<div class=\\\"pb-2 col-md-3 col-lg-3\\\">&nbsp;</div>\"}},{\"id\":1606322753797,\"title\":\"AMMINISTRAZIONE TRASPARENTE\",\"visible\":true,\"text\":{\"data\":\"<p>I dati personali pubblicati sono riutilizzabili solo alle condizioni previste dalla direttiva comunitaria 2003/98/CE e dal d.lgs. 36/2006</p>\"}},{\"id\":1606322771723,\"title\":\"SOCIAL\",\"visible\":true,\"text\":{\"data\":\"<p><a class=\\\"list-item\\\" title=\\\"Scarica le app\\\" href=\\\"https://staging.comune.modena.it/comunicazione/le-app-del-comune-di-modena\\\">Scarica le app</a></p>\"}}]}]"
+  },
+  "group": "Configurazione prodotti aggiuntivi",
+  "schema": {
+    "fieldsets": [
       {
-        "title": "Prima colonna",
-        "visible": true,
-        "text":{
-          "blocks": [
-            {
-              "key": "el74l",
-              "text": "Quisque molestie dapibus libero non pellentesque.",
-              "type": "unstyled",
-              "depth": 0,
-              "inlineStyleRanges": [],
-              "entityRanges": [],
-              "data": {}
-            }
-          ],
-          "entityMap": {}
-        }
-      },
-      {
-        "title": "Seconda colonna",
-        "visible": true,
-        "text":{
-          "blocks": [
-            {
-              "key": "el74l",
-              "text": "Quisque molestie dapibus libero non pellentesque.",
-              "type": "unstyled",
-              "depth": 0,
-              "inlineStyleRanges": [],
-              "entityRanges": [],
-              "data": {}
-            }
-          ],
-          "entityMap": {}
-        }
-      },
-      {
-        "title": "Terza colonna",
-        "visible": true,
-        "text":{
-          "blocks": [
-            {
-              "key": "el74l",
-              "text": "Quisque molestie dapibus libero non pellentesque.",
-              "type": "unstyled",
-              "depth": 0,
-              "inlineStyleRanges": [],
-              "entityRanges": [],
-              "data": {}
-            }
-          ],
-          "entityMap": {}
-        }
-      },
-      {
-        "title": "Quarta colonna",
-        "visible": true,
-        "text":{
-          "blocks": [
-            {
-              "key": "el74l",
-              "text": "Quisque molestie dapibus libero non pellentesque.",
-              "type": "unstyled",
-              "depth": 0,
-              "inlineStyleRanges": [],
-              "entityRanges": [],
-              "data": {}
-            }
-          ],
-          "entityMap": {}
-        }
+        "fields": [
+          "footer_columns"
+        ],
+        "id": "default",
+        "title": "Default"
       }
-    ]
-  }
-]
+    ],
+    "properties": {
+      "footer_columns": {
+        "default": "",
+        "description": "Configura una serie di colonne per il footer. Puoi creare differenti impostazioni per le varie lingue del sito.",
+        "title": "Colonne footer",
+        "type": "string",
+        "widget": "textarea"
+      }
+    },
+    "required": [
+      "footer_columns"
+    ],
+    "type": "object"
+  },
+  "title": "Impostazioni footer"
+}
