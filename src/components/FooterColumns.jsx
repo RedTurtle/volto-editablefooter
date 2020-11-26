@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import { defineMessages, useIntl } from 'react-intl';
+
 import { Segment, Grid } from 'semantic-ui-react';
 
 import { flattenHTMLToAppURL, flattenToAppURL } from '@plone/volto/helpers';
 
 import { getEditableFooterColumns } from '../actions';
-
-const messages = defineMessages({});
+import Socials from './Socials';
+import NewsletterSubscribe from './NewsletterSubscribe';
 
 const FooterColumns = ({ footer }) => {
   const N_COLUMNS = 4;
@@ -47,7 +47,7 @@ const FooterColumns = ({ footer }) => {
                   <a
                     href={
                       column.titleLink?.length > 0
-                        ? column.titleLink[0]['@id']
+                        ? flattenToAppURL(column.titleLink[0]['@id'])
                         : '/'
                     }
                     title={column.title}
@@ -55,6 +55,8 @@ const FooterColumns = ({ footer }) => {
                     {column.title}
                   </a>
                 </h4>
+                {column.showSocial && <Socials />}
+                {column.newsletterSubscribe && <NewsletterSubscribe />}
                 <div
                   dangerouslySetInnerHTML={{
                     __html: flattenHTMLToAppURL(column.text.data),

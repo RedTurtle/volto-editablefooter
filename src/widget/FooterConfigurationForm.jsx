@@ -26,7 +26,11 @@ const messages = defineMessages({
   },
   showSocial: {
     id: 'editablefooter-showSocial',
-    defaultMessage: 'Show Social links',
+    defaultMessage: 'Show social links',
+  },
+  newsletterSubscribe: {
+    id: 'editablefooter-newsletterSubscribe',
+    defaultMessage: 'Show newsletter subscribe form',
   },
   text: {
     id: 'editablefooter-text',
@@ -109,6 +113,14 @@ const FooterConfigurationForm = ({
         defaultValue={true}
         value={!!footerColumn.showSocial}
         onChange={(id, value) => onChangeFormData('showSocial', value)}
+      />
+      <CheckboxWidget
+        id={`${id}-newsletterSubscribe`}
+        title={intl.formatMessage(messages.newsletterSubscribe)}
+        description=""
+        defaultValue={true}
+        value={!!footerColumn.newsletterSubscribe}
+        onChange={(id, value) => onChangeFormData('newsletterSubscribe', value)}
       />
 
       <ObjectBrowserWidget

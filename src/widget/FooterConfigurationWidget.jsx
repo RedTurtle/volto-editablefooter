@@ -63,6 +63,7 @@ const defaultMenuItem = (title) => ({
   title,
   visible: true,
   showSocial: false,
+  newsletterSubscribe: false,
   titleLink: [],
   text: null,
 });
