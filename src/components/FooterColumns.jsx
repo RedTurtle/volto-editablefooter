@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 import { Segment, Grid } from 'semantic-ui-react';
 
 import { flattenHTMLToAppURL, flattenToAppURL } from '@plone/volto/helpers';
+import { ConditionalLink } from '@plone/volto/components';
 
 import { getEditableFooterColumns } from '../actions';
 import Socials from './Socials';
@@ -44,16 +45,13 @@ const FooterColumns = ({ footer }) => {
             .map((column) => (
               <Grid.Column width={12 / ncolumns} key={column.id}>
                 <h4>
-                  <a
-                    href={
-                      column.titleLink?.length > 0
-                        ? flattenToAppURL(column.titleLink[0]['@id'])
-                        : '/'
-                    }
+                  <ConditionalLink
+                    condition={column.titleLink?.length > 0}
+                    to={flattenToAppURL(column.titleLink[0]['@id'])}
                     title={column.title}
                   >
                     {column.title}
-                  </a>
+                  </ConditionalLink>
                 </h4>
                 {column.showSocial && <Socials />}
                 {column.newsletterSubscribe && <NewsletterSubscribe />}
