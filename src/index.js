@@ -15,6 +15,16 @@ export default (config) => {
     ...config.addonReducers,
     editableFooterColumns: editableFooterColumnsReducer,
   };
+  
+  config.settings.extendableAsyncConnect = [
+    ...config.settings.extendableAsyncConnect,
+    {
+      key: 'secondary-menu',
+      promise: ({ location, store: { dispatch } }) => {
+        __SERVER__ && dispatch(getEditableFooterColumns());
+      },
+    },
+  ];
 
   return config;
 };
