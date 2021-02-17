@@ -19,7 +19,7 @@ export default (config) => {
   config.settings.extendableAsyncConnect = [
     ...config.settings.extendableAsyncConnect,
     {
-      key: 'secondary-menu',
+      key: 'editable-footer',
       promise: ({ location, store: { dispatch } }) => {
         __SERVER__ && dispatch(getEditableFooterColumns());
       },
