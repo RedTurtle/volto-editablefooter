@@ -1,7 +1,7 @@
 # volto-editablefooter
 
 Volto addon for a customizable footer.
-Intended to be used with [RedTurtle.volto_editablefooter](https://github.com/RedTurtle/redturtle.volto_editablefooter)
+Intended to be used with [redturtle.voltoplugin.editablefooter](https://github.com/RedTurtle/redturtle.voltoplugin.editablefooter)
 
 To be used with mrs-developer, see [Volto docs](https://docs.voltocms.com/customizing/add-ons/) for further usage informations.
 
