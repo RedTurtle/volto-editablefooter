@@ -93,7 +93,8 @@ const FooterConfigurationWidget = ({
 
   const handleChangeConfiguration = (value) => {
     setFooterConfiguration(value);
-    onChange(id, JSON.stringify(value));
+    // onChange(id, JSON.stringify(value));
+    onChange(id, value);
   };
 
   const addFooterPath = (e) => {
