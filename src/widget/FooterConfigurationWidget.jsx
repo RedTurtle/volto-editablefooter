@@ -85,7 +85,7 @@ const FooterConfigurationWidget = ({
 }) => {
   const intl = useIntl();
   const [footerConfiguration, setFooterConfiguration] = useState(
-    value ? JSON.parse(value) : defaultMenuConfiguration,
+    value || defaultMenuConfiguration,
   );
 
   const [activeFooter, setActiveFooter] = useState(0);
@@ -93,7 +93,6 @@ const FooterConfigurationWidget = ({
 
   const handleChangeConfiguration = (value) => {
     setFooterConfiguration(value);
-    // onChange(id, JSON.stringify(value));
     onChange(id, value);
   };
 
