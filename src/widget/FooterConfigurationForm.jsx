@@ -122,7 +122,6 @@ const FooterConfigurationForm = ({
         value={!!footerColumn.newsletterSubscribe}
         onChange={(id, value) => onChangeFormData('newsletterSubscribe', value)}
       />
-
       <ObjectBrowserWidget
         id={`${id}-titleLink`}
         title={intl.formatMessage(messages.titleLink)}
@@ -131,7 +130,6 @@ const FooterConfigurationForm = ({
         value={footerColumn.titleLink ?? []}
         onChange={(id, value) => onChangeFormData('titleLink', value)}
       />
-
       <RichTextWidget
         id={`${id}-text`}
         title={intl.formatMessage(messages.text)}
@@ -142,7 +140,6 @@ const FooterConfigurationForm = ({
         }}
         key={`${id}-text`}
       />
-
       <UIForm.Field inline className="delete wide" id="column-delete">
         <Grid>
           <Grid.Row stretched>
