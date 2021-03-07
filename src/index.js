@@ -16,12 +16,18 @@ export default (config) => {
     editableFooterColumns: editableFooterColumnsReducer,
   };
 
-  config.settings.extendableAsyncConnect = [
-    ...config.settings.extendableAsyncConnect,
+  config.settings.asyncPropsExtenders = [
+    ...(config.settings.asyncPropsExtenders ?? []),
     {
-      key: 'editable-footer',
-      promise: ({ location, store: { dispatch } }) =>
-        __SERVER__ && dispatch(getEditableFooterColumns()),
+      path: '/',
+      extend: (dispatchActions) => {
+        dispatchActions.push({
+          key: 'editable-footer',
+          promise: ({ location, store: { dispatch } }) =>
+            __SERVER__ && dispatch(getEditableFooterColumns()),
+        });
+        return dispatchActions;
+      },
     },
   ];
 
