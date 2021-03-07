@@ -9,6 +9,8 @@ Created with [voltocli](https://github.com/nzambello/voltocli).
 
 ## Usage
 
+> If you're using Volto < 12, then use [v2.1.0](https://github.com/collective/volto-dropdownmenu/tree/v2.1.0)
+
 Simply load the addon in your project, then edit the configuration in `/controlpanel/footer-settings`.
 Example configuration to be saved in Plone [here](./footerConfigurationExample.json).
 
