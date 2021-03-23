@@ -1,0 +1,84 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language: \n"
+"Language-Team: \n"
+"Content-Type: \n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+ #: widget/FooterConfigurationWidget
+msgid "editablefooter-add-rootpath"
+msgstr ""
+
+#: widget/FooterConfigurationWidget
+msgid "editablefooter-addfootercolumn"
+msgstr ""
+
+#: widget/FooterConfigurationWidget
+msgid "editablefooter-delete-button"
+msgstr ""
+
+#: widget/FooterConfigurationWidget
+msgid "editablefooter-delete-footerpath"
+msgstr ""
+
+#: widget/FooterConfigurationForm
+msgid "editablefooter-deletefootercolumn"
+msgstr ""
+
+#: widget/FooterConfigurationForm
+msgid "editablefooter-deletefootercolumn-button"
+msgstr ""
+
+#: widget/FooterConfigurationWidget
+msgid "editablefooter-emptyActiveFooterColumn"
+msgstr ""
+
+#: widget/FooterConfigurationWidget
+msgid "editablefooter-emptyActiveFooterPath"
+msgstr ""
+
+#: widget/FooterConfigurationWidget
+msgid "editablefooter-items-header"
+msgstr ""
+
+#: widget/FooterConfigurationWidget
+msgid "editablefooter-move-column-down"
+msgstr ""
+
+#: widget/FooterConfigurationWidget
+msgid "editablefooter-move-column-up"
+msgstr ""
+
+#: widget/FooterConfigurationForm
+msgid "editablefooter-newsletterSubscribe"
+msgstr ""
+
+#: widget/FooterConfigurationWidget
+msgid "editablefooter-rootpath"
+msgstr ""
+
+#: widget/FooterConfigurationForm
+msgid "editablefooter-showSocial"
+msgstr ""
+
+#: widget/FooterConfigurationForm
+msgid "editablefooter-text"
+msgstr ""
+
+#: widget/FooterConfigurationForm
+msgid "editablefooter-title"
+msgstr ""
+
+#: widget/FooterConfigurationForm
+msgid "editablefooter-titleLink"
+msgstr ""
+
+#: widget/FooterConfigurationForm
+msgid "editablefooter-visible"
+msgstr ""
