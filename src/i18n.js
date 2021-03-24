@@ -34,18 +34,11 @@ function getMessages() {
   return reduce(
     concat(
       {},
-      ...map(
-        // We ignore the existing customized shadowed components ones, since most
-        // probably we won't be overriding them
-        // If so, we should do it in the config object or somewhere else
-        glob('build/messages/src/**/*.json', {
-          ignore: 'build/messages/src/customizations/**',
-        }),
-        (filename) =>
-          map(JSON.parse(fs.readFileSync(filename, 'utf8')), (message) => ({
-            ...message,
-            filename: filename.match(/build\/messages\/src\/(.*).json$/)[1],
-          })),
+      ...map(glob('build/messages/src/**/*.json', {}), (filename) =>
+        map(JSON.parse(fs.readFileSync(filename, 'utf8')), (message) => ({
+          ...message,
+          filename: filename.match(/build\/messages\/src\/(.*).json$/)[1],
+        })),
       ),
     ),
     (current, value) => {
@@ -110,7 +103,7 @@ function potHeader() {
  "Preferred-Encodings: utf-8\\n"
  "Domain: volto\\n"
 
- `;
+`;
 }
 
 /**

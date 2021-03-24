@@ -1,7 +1,7 @@
 msgid ""
  msgstr ""
  "Project-Id-Version: Plone\n"
- "POT-Creation-Date: 2021-03-23T20:37:16.364Z\n"
+ "POT-Creation-Date: 2021-03-24T18:00:12.709Z\n"
  "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
  "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
  "MIME-Version: 1.0\n"
@@ -13,7 +13,57 @@ msgid ""
  "Preferred-Encodings: utf-8\n"
  "Domain: volto\n"
 
- #: widget/FooterConfigurationWidget
+#: customizations/components/theme/Footer/Footer
+# defaultMessage: Accessibility
+msgid "Accessibility"
+msgstr ""
+
+#: customizations/components/theme/Footer/Footer
+# defaultMessage: Contact
+msgid "Contact"
+msgstr ""
+
+#: customizations/components/theme/Footer/Footer
+# defaultMessage: Copyright
+msgid "Copyright"
+msgstr ""
+
+#: customizations/components/theme/Footer/Footer
+# defaultMessage: Distributed under the {license}.
+msgid "Distributed under the {license}."
+msgstr ""
+
+#: customizations/components/theme/Footer/Footer
+# defaultMessage: GNU GPL license
+msgid "GNU GPL license"
+msgstr ""
+
+#: customizations/components/theme/Footer/Footer
+# defaultMessage: Plone Foundation
+msgid "Plone Foundation"
+msgstr ""
+
+#: customizations/components/theme/Footer/Footer
+# defaultMessage: Plone{reg} Open Source CMS/WCM
+msgid "Plone{reg} Open Source CMS/WCM"
+msgstr ""
+
+#: customizations/components/theme/Footer/Footer
+# defaultMessage: Powered by Plone & Python
+msgid "Powered by Plone & Python"
+msgstr ""
+
+#: customizations/components/theme/Footer/Footer
+# defaultMessage: Site Map
+msgid "Site Map"
+msgstr ""
+
+#: customizations/components/theme/Footer/Footer
+# defaultMessage: The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends.
+msgid "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
+msgstr ""
+
+#: widget/FooterConfigurationWidget
 # defaultMessage: Add footer path
 msgid "editablefooter-add-rootpath"
 msgstr ""

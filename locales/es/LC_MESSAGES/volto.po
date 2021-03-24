@@ -11,7 +11,47 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
- #: widget/FooterConfigurationWidget
+ #: customizations/components/theme/Footer/Footer
+msgid "Accessibility"
+msgstr ""
+
+#: customizations/components/theme/Footer/Footer
+msgid "Contact"
+msgstr ""
+
+#: customizations/components/theme/Footer/Footer
+msgid "Copyright"
+msgstr ""
+
+#: customizations/components/theme/Footer/Footer
+msgid "Distributed under the {license}."
+msgstr ""
+
+#: customizations/components/theme/Footer/Footer
+msgid "GNU GPL license"
+msgstr ""
+
+#: customizations/components/theme/Footer/Footer
+msgid "Plone Foundation"
+msgstr ""
+
+#: customizations/components/theme/Footer/Footer
+msgid "Plone{reg} Open Source CMS/WCM"
+msgstr ""
+
+#: customizations/components/theme/Footer/Footer
+msgid "Powered by Plone & Python"
+msgstr ""
+
+#: customizations/components/theme/Footer/Footer
+msgid "Site Map"
+msgstr ""
+
+#: customizations/components/theme/Footer/Footer
+msgid "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
+msgstr ""
+
+#: widget/FooterConfigurationWidget
 msgid "editablefooter-add-rootpath"
 msgstr ""
 
