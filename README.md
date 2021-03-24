@@ -9,6 +9,8 @@ Created with [voltocli](https://github.com/nzambello/voltocli).
 
 ## Usage
 
+> If you're using Volto < 12, then use [v2.1.0](https://github.com/collective/volto-editablefooter/tree/v2.1.0)
+
 Simply load the addon in your project, then edit the configuration in `/controlpanel/footer-settings`.
 Example configuration to be saved in Plone [here](./footerConfigurationExample.json).
 
@@ -20,3 +22,12 @@ To use the default template for the editable footer, add `src/addons/volto-edita
     "src/addons/volto-editablefooter/src/customizations"
   ]
 ```
+
+## Translations
+
+This product has been translated into:
+
+- Italian
+- English
+
+Please, contribute to this project adding translations for your language.

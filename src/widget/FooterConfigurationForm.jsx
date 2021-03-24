@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import { Form as UIForm, Grid, Button } from 'semantic-ui-react';
-import { widgets } from '~/config';
 import {
   TextWidget,
   CheckboxWidget,
   Sidebar,
   ObjectBrowserWidget,
 } from '@plone/volto/components';
-
 import { Portal } from 'react-portal';
+import config from '@plone/volto/registry';
+
 
 const messages = defineMessages({
   title: {
@@ -53,7 +53,7 @@ const FooterConfigurationForm = ({
   deleteFooterColumn,
 }) => {
   const intl = useIntl();
-  const RichTextWidget = widgets.widget.richtext;
+  const RichTextWidget = config.widgets.widget.richtext;
 
   const preventClick = (e) => {
     e.preventDefault();
