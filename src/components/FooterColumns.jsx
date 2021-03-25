@@ -23,7 +23,7 @@ const FooterColumns = ({ footer }) => {
 
   useEffect(() => {
     dispatch(getEditableFooterColumns());
-  }, [dispatch]);
+  }, [dispatch, location]);
 
   //filter rootpaths
   const footerColumns = getItemsByPath(
