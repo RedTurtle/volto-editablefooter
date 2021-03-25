@@ -8,6 +8,7 @@ import { flattenHTMLToAppURL, flattenToAppURL } from '@plone/volto/helpers';
 import { ConditionalLink } from '@plone/volto/components';
 
 import { getEditableFooterColumns } from '../actions';
+import { getItemsByPath } from '../utils';
 import Socials from './Socials';
 import NewsletterSubscribe from './NewsletterSubscribe';
 
@@ -25,14 +26,10 @@ const FooterColumns = ({ footer }) => {
   }, [dispatch]);
 
   //filter rootpaths
-  const footerColumns =
-    footerConfiguration
-      .filter((f) =>
-        (location?.pathname?.length ? location.pathname : '/').match(
-          new RegExp(flattenToAppURL(f.rootPath)),
-        ),
-      )
-      .pop()?.items ?? [];
+  const footerColumns = getItemsByPath(
+    footerConfiguration,
+    location?.pathname?.length ? location.pathname : '/',
+  );
 
   const ncolumns =
     footerColumns.length < N_COLUMNS ? footerColumns.length : N_COLUMNS;
