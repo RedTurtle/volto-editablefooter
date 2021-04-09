@@ -27,11 +27,17 @@ export default (config) => {
     {
       path: '/',
       extend: (dispatchActions) => {
-        dispatchActions.push({
-          key: 'editable-footer',
-          promise: ({ location, store: { dispatch } }) =>
-            __SERVER__ && dispatch(getEditableFooterColumns()),
-        });
+        if (
+          dispatchActions.filter(
+            (asyncAction) => asyncAction.key === 'editable-footer',
+          ).length === 0
+        ) {
+          dispatchActions.push({
+            key: 'editable-footer',
+            promise: ({ location, store: { dispatch } }) =>
+              __SERVER__ && dispatch(getEditableFooterColumns()),
+          });
+        }
         return dispatchActions;
       },
     },
