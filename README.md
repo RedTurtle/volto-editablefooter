@@ -30,8 +30,8 @@ If not needed, you could remove unused options in config:
 
 ```json
  config.settings["volto-editablefooter"] = {
-    "options": { "socials": true, "newsletterSubscribe": true },
-  };
+  "options": { "socials": true, "newsletterSubscribe": true },
+};
 ```
 
 ## Translations
