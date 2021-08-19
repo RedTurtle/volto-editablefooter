@@ -34,6 +34,17 @@ config.settings["volto-editablefooter"] = {
 };
 ```
 
+### Upgrades
+
+#### Upgrade to 4.x.x
+If you are upgrading your addon to a 4.x.x version, add this addon configuration in your config:
+
+```json
+config.settings["volto-editablefooter"] = {
+  "options": { "socials": true, "newsletterSubscribe": true },
+};
+```
+
 ## Translations
 
 This product has been translated into:
