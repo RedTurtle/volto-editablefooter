@@ -29,7 +29,7 @@ By default, column configuration shows all available options.
 If not needed, you could remove unused options in config:
 
 ```json
- config.settings["volto-editablefooter"] = {
+config.settings["volto-editablefooter"] = {
   "options": { "socials": true, "newsletterSubscribe": true },
 };
 ```
