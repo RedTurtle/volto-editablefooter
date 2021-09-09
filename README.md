@@ -23,6 +23,28 @@ To use the default template for the editable footer, add `src/addons/volto-edita
   ]
 ```
 
+### Configuration
+
+By default, column configuration doesn't show all available options.
+If not needed, you could add options in config:
+
+```json
+config.settings["volto-editablefooter"] = {
+  "options": { "socials": false, "newsletterSubscribe": false },
+};
+```
+
+### Upgrades
+
+#### Upgrade to 4.x.x
+If you are upgrading your addon to a 4.x.x version, add this addon configuration in your config:
+
+```json
+config.settings["volto-editablefooter"] = {
+  "options": { "socials": true, "newsletterSubscribe": true },
+};
+```
+
 ## Translations
 
 This product has been translated into:

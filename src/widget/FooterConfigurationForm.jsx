@@ -10,7 +10,6 @@ import {
 import { Portal } from 'react-portal';
 import config from '@plone/volto/registry';
 
-
 const messages = defineMessages({
   title: {
     id: 'editablefooter-title',
@@ -106,22 +105,28 @@ const FooterConfigurationForm = ({
         value={!!footerColumn.visible}
         onChange={(id, value) => onChangeFormData('visible', value)}
       />
-      <CheckboxWidget
-        id={`${id}-showSocial`}
-        title={intl.formatMessage(messages.showSocial)}
-        description=""
-        defaultValue={true}
-        value={!!footerColumn.showSocial}
-        onChange={(id, value) => onChangeFormData('showSocial', value)}
-      />
-      <CheckboxWidget
-        id={`${id}-newsletterSubscribe`}
-        title={intl.formatMessage(messages.newsletterSubscribe)}
-        description=""
-        defaultValue={true}
-        value={!!footerColumn.newsletterSubscribe}
-        onChange={(id, value) => onChangeFormData('newsletterSubscribe', value)}
-      />
+      {config.settings['volto-editablefooter'].options.socials && (
+        <CheckboxWidget
+          id={`${id}-showSocial`}
+          title={intl.formatMessage(messages.showSocial)}
+          description=""
+          defaultValue={true}
+          value={!!footerColumn.showSocial}
+          onChange={(id, value) => onChangeFormData('showSocial', value)}
+        />
+      )}
+      {config.settings['volto-editablefooter'].options.newsletterSubscribe && (
+        <CheckboxWidget
+          id={`${id}-newsletterSubscribe`}
+          title={intl.formatMessage(messages.newsletterSubscribe)}
+          description=""
+          defaultValue={true}
+          value={!!footerColumn.newsletterSubscribe}
+          onChange={(id, value) =>
+            onChangeFormData('newsletterSubscribe', value)
+          }
+        />
+      )}
       <ObjectBrowserWidget
         id={`${id}-titleLink`}
         title={intl.formatMessage(messages.titleLink)}

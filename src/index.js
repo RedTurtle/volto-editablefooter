@@ -43,5 +43,8 @@ export default (config) => {
     },
   ];
 
+  config.settings['volto-editablefooter'] = {
+    options: { socials: false, newsletterSubscribe: false },
+  };
   return config;
 };
