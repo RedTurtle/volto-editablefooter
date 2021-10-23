@@ -11,114 +11,92 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
- #: customizations/components/theme/Footer/Footer
-msgid "Accessibility"
-msgstr ""
-
-#: customizations/components/theme/Footer/Footer
-msgid "Contact"
-msgstr ""
-
-#: customizations/components/theme/Footer/Footer
-msgid "Copyright"
-msgstr ""
-
-#: customizations/components/theme/Footer/Footer
-msgid "Distributed under the {license}."
-msgstr ""
-
-#: customizations/components/theme/Footer/Footer
-msgid "GNU GPL license"
-msgstr ""
-
-#: customizations/components/theme/Footer/Footer
-msgid "Plone Foundation"
-msgstr ""
-
-#: customizations/components/theme/Footer/Footer
-msgid "Plone{reg} Open Source CMS/WCM"
-msgstr ""
-
-#: customizations/components/theme/Footer/Footer
-msgid "Powered by Plone & Python"
-msgstr ""
-
-#: customizations/components/theme/Footer/Footer
-msgid "Site Map"
-msgstr ""
-
-#: customizations/components/theme/Footer/Footer
-msgid "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
-msgstr ""
-
 #: widget/FooterConfigurationWidget
+# defaultMessage: Add footer path
 msgid "editablefooter-add-rootpath"
 msgstr ""
 
 #: widget/FooterConfigurationWidget
+# defaultMessage: Add footer column
 msgid "editablefooter-addfootercolumn"
 msgstr ""
 
 #: widget/FooterConfigurationWidget
+# defaultMessage: Delete
 msgid "editablefooter-delete-button"
 msgstr ""
 
 #: widget/FooterConfigurationWidget
+# defaultMessage: Delete footer path
 msgid "editablefooter-delete-footerpath"
 msgstr ""
 
 #: widget/FooterConfigurationForm
+# defaultMessage: Delete footer column
 msgid "editablefooter-deletefootercolumn"
 msgstr ""
 
 #: widget/FooterConfigurationForm
+# defaultMessage: Delete footer column
 msgid "editablefooter-deletefootercolumn-button"
 msgstr ""
 
 #: widget/FooterConfigurationWidget
+# defaultMessage: Select or add a footer column
 msgid "editablefooter-emptyActiveFooterColumn"
 msgstr ""
 
 #: widget/FooterConfigurationWidget
+# defaultMessage: Select or add a footer path
 msgid "editablefooter-emptyActiveFooterPath"
 msgstr ""
 
 #: widget/FooterConfigurationWidget
+# defaultMessage: Footer columns
 msgid "editablefooter-items-header"
 msgstr ""
 
 #: widget/FooterConfigurationWidget
+# defaultMessage: Move column down
 msgid "editablefooter-move-column-down"
 msgstr ""
 
 #: widget/FooterConfigurationWidget
+# defaultMessage: Move column up
 msgid "editablefooter-move-column-up"
 msgstr ""
 
 #: widget/FooterConfigurationForm
+# defaultMessage: Show newsletter subscribe form
 msgid "editablefooter-newsletterSubscribe"
 msgstr ""
 
 #: widget/FooterConfigurationWidget
+# defaultMessage: Root path
 msgid "editablefooter-rootpath"
 msgstr ""
 
 #: widget/FooterConfigurationForm
+# defaultMessage: Show social links
 msgid "editablefooter-showSocial"
 msgstr ""
 
 #: widget/FooterConfigurationForm
+# defaultMessage: Text
 msgid "editablefooter-text"
 msgstr ""
 
 #: widget/FooterConfigurationForm
+# defaultMessage: Title
 msgid "editablefooter-title"
 msgstr ""
 
 #: widget/FooterConfigurationForm
+# defaultMessage: Title link
 msgid "editablefooter-titleLink"
 msgstr ""
 
 #: widget/FooterConfigurationForm
+# defaultMessage: Visible
 msgid "editablefooter-visible"
 msgstr ""
