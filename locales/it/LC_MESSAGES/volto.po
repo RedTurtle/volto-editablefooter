@@ -11,114 +11,92 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
- #: customizations/components/theme/Footer/Footer
-msgid "Accessibility"
-msgstr "Accessibilità"
-
-#: customizations/components/theme/Footer/Footer
-msgid "Contact"
-msgstr "Contatti"
-
-#: customizations/components/theme/Footer/Footer
-msgid "Copyright"
-msgstr "Copyright"
-
-#: customizations/components/theme/Footer/Footer
-msgid "Distributed under the {license}."
-msgstr "Distribuito con {license}."
-
-#: customizations/components/theme/Footer/Footer
-msgid "GNU GPL license"
-msgstr "licenza GNU GPL"
-
-#: customizations/components/theme/Footer/Footer
-msgid "Plone Foundation"
-msgstr "Plone Foundation"
-
-#: customizations/components/theme/Footer/Footer
-msgid "Plone{reg} Open Source CMS/WCM"
-msgstr "Plone{reg} Open Source CMS/WCM"
-
-#: customizations/components/theme/Footer/Footer
-msgid "Powered by Plone & Python"
-msgstr "Realizzato con Plone &amp; Python"
-
-#: customizations/components/theme/Footer/Footer
-msgid "Site Map"
-msgstr "Mappa del sito"
-
-#: customizations/components/theme/Footer/Footer
-msgid "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
-msgstr ""
-
 #: widget/FooterConfigurationWidget
+# defaultMessage: Add footer path
 msgid "editablefooter-add-rootpath"
 msgstr "Aggiungi una radice di navigazione"
 
 #: widget/FooterConfigurationWidget
+# defaultMessage: Add footer column
 msgid "editablefooter-addfootercolumn"
 msgstr "Aggiungi una colonna del footer"
 
 #: widget/FooterConfigurationWidget
+# defaultMessage: Delete
 msgid "editablefooter-delete-button"
 msgstr "Rimuovi"
 
 #: widget/FooterConfigurationWidget
+# defaultMessage: Delete footer path
 msgid "editablefooter-delete-footerpath"
 msgstr "Rimuovi percorso"
 
 #: widget/FooterConfigurationForm
+# defaultMessage: Delete footer column
 msgid "editablefooter-deletefootercolumn"
 msgstr "Rimuovi colonna"
 
 #: widget/FooterConfigurationForm
+# defaultMessage: Delete footer column
 msgid "editablefooter-deletefootercolumn-button"
 msgstr "Rimuovi colonna"
 
 #: widget/FooterConfigurationWidget
+# defaultMessage: Select or add a footer column
 msgid "editablefooter-emptyActiveFooterColumn"
 msgstr "Seleziona o aggiungi una colonna"
 
 #: widget/FooterConfigurationWidget
+# defaultMessage: Select or add a footer path
 msgid "editablefooter-emptyActiveFooterPath"
 msgstr "Seleziona o aggiungi un percorso di navigazione"
 
 #: widget/FooterConfigurationWidget
+# defaultMessage: Footer columns
 msgid "editablefooter-items-header"
 msgstr "Colonne del footer"
 
 #: widget/FooterConfigurationWidget
+# defaultMessage: Move column down
 msgid "editablefooter-move-column-down"
 msgstr "Sposta dopo"
 
 #: widget/FooterConfigurationWidget
+# defaultMessage: Move column up
 msgid "editablefooter-move-column-up"
 msgstr "Sposta prima"
 
 #: widget/FooterConfigurationForm
+# defaultMessage: Show newsletter subscribe form
 msgid "editablefooter-newsletterSubscribe"
 msgstr "Mostra il form di iscrizione alla newsletter"
 
 #: widget/FooterConfigurationWidget
+# defaultMessage: Root path
 msgid "editablefooter-rootpath"
 msgstr "Radice di navigazione"
 
 #: widget/FooterConfigurationForm
+# defaultMessage: Show social links
 msgid "editablefooter-showSocial"
 msgstr "Mostra i social"
 
 #: widget/FooterConfigurationForm
+# defaultMessage: Text
 msgid "editablefooter-text"
 msgstr "Testo"
 
 #: widget/FooterConfigurationForm
+# defaultMessage: Title
 msgid "editablefooter-title"
 msgstr "Titolo"
 
 #: widget/FooterConfigurationForm
+# defaultMessage: Title link
 msgid "editablefooter-titleLink"
 msgstr "Link sul titolo"
 
 #: widget/FooterConfigurationForm
+# defaultMessage: Visible
 msgid "editablefooter-visible"
 msgstr "Visibile"
