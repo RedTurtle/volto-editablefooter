@@ -9,7 +9,9 @@ Created with [voltocli](https://github.com/nzambello/voltocli).
 
 ## Usage
 
-> If you're using Volto < 12, then use [v2.1.0](https://github.com/collective/volto-editablefooter/tree/v2.1.0)
+> If you are using Volto < 16, then use [v4.1.1](https://github.com/collective/volto-editablefooter/tree/v4.1.1)
+>
+> If you are using Volto < 12, then use [v2.1.0](https://github.com/collective/volto-editablefooter/tree/v2.1.0)
 
 Simply load the addon in your project, then edit the configuration in `/controlpanel/footer-settings`.
 Example configuration to be saved in Plone [here](./footerConfigurationExample.json).
@@ -37,6 +39,7 @@ config.settings["volto-editablefooter"] = {
 ### Upgrades
 
 #### Upgrade to 4.x.x
+
 If you are upgrading your addon to a 4.x.x version, add this addon configuration in your config:
 
 ```json
