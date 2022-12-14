@@ -42,13 +42,16 @@ const FooterColumns = ({ footer }) => {
             .map((column) => (
               <Grid.Column width={12 / ncolumns} key={column.id}>
                 <h4>
-                  <ConditionalLink
-                    condition={column.titleLink?.length > 0}
-                    to={flattenToAppURL(column.titleLink[0]['@id'])}
-                    title={column.title}
-                  >
-                    {column.title}
-                  </ConditionalLink>
+                  {column?.title && (
+                    <ConditionalLink
+                      condition={column.titleLink?.length > 0}
+                      item={column.titleLink?.[0]}
+                      to={column.titleLink?.[0]?.['@id'] ? null : ''}
+                      title={column.title}
+                    >
+                      {column.title}
+                    </ConditionalLink>
+                  )}
                 </h4>
                 {column.showSocial && <Socials />}
                 {column.newsletterSubscribe && <NewsletterSubscribe />}
