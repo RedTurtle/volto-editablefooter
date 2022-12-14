@@ -93,7 +93,7 @@ const FooterConfigurationForm = ({
         id={`${id}-title`}
         title={intl.formatMessage(messages.title)}
         description=""
-        required={true}
+        required={false}
         value={footerColumn.title}
         onChange={(id, value) => onChangeFormData('title', value)}
       />
