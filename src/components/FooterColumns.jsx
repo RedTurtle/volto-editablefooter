@@ -46,7 +46,11 @@ const FooterColumns = ({ footer }) => {
                     <ConditionalLink
                       condition={column.titleLink?.length > 0}
                       item={column.titleLink?.[0]}
-                      to={column.titleLink?.[0]?.['@id'] ? null : ''}
+                      to={
+                        flattenToAppURL(column.titleLink?.[0]?.['@id'])
+                          ? null
+                          : ''
+                      }
                       title={column.title}
                     >
                       {column.title}
