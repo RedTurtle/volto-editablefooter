@@ -74,12 +74,16 @@ const FooterConfigurationForm = ({
     });
 
     return () => {
-      document
-        .querySelector('form.ui.form')
-        .removeEventListener('click', preventClick);
-      document.querySelectorAll('form.ui.form input').forEach((item) => {
-        item.removeEventListener('keypress', preventEnter);
-      });
+      const form = document.querySelector('form.ui.form');
+      const input = document.querySelectorAll('form.ui.form input');
+      if (form) {
+        form.removeEventListener('click', preventClick);
+      }
+      if (input?.length > 0) {
+        input.forEach((item) => {
+          item.removeEventListener('keypress', preventEnter);
+        });
+      }
     };
   }, []);
 
@@ -139,7 +143,7 @@ const FooterConfigurationForm = ({
         id={`${id}-text`}
         title={intl.formatMessage(messages.text)}
         description=""
-        value={footerColumn.text || { data: null }}
+        value={footerColumn.text}
         onChange={(id, value) => {
           onChangeFormData('text', value);
         }}
