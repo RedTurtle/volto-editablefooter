@@ -56,6 +56,23 @@ const messages = defineMessages({
     id: 'editablefooter-emptyActiveFooterColumn',
     defaultMessage: 'Select or add a footer column',
   },
+
+  column: {
+    id: 'editablefooter-column',
+    defaultMessage: 'Column',
+  },
+  no_title: {
+    id: 'editablefooter-no-title',
+    defaultMessage: 'without title',
+  },
+  column_selection: {
+    id: 'editablefooter-column-selection',
+    defaultMessage: 'Column selection',
+  },
+  column_content: {
+    id: 'editablefooter-column-content',
+    defaultMessage: 'Edit column content',
+  },
 });
 
 const defaultMenuItem = (title) => ({
@@ -215,6 +232,7 @@ const FooterConfigurationWidget = ({
                     active={false}
                     name={intl.formatMessage(messages.addFooterPath)}
                     onClick={addFooterPath}
+                    aria-label={intl.formatMessage(messages.addFooterPath)}
                   >
                     <Icon name="plus" />
                   </Menu.Item>
@@ -279,6 +297,10 @@ const FooterConfigurationWidget = ({
                           vertical
                           tabular
                           className="footer-items-menu"
+                          role="region"
+                          aria-label={intl.formatMessage(
+                            messages.column_selection,
+                          )}
                         >
                           {footerConfiguration[activeFooter].items?.map(
                             (footerColumn, idx) => (
@@ -287,8 +309,35 @@ const FooterConfigurationWidget = ({
                                 name={footerColumn.title}
                                 active={activeFooterColumn === idx}
                                 onClick={() => setActiveFooterColumn(idx)}
+                                aria-controls={'footerConfigContent'}
+                                as="button"
+                                aria-expanded={activeFooterColumn === idx}
+                                aria-label={
+                                  intl.formatMessage(messages.column) +
+                                  ' ' +
+                                  (idx + 1) +
+                                  ' ' +
+                                  (footerColumn.title ??
+                                    intl.formatMessage(messages.no_title))
+                                }
                               >
-                                <Button.Group vertical className="move-buttons">
+                                <Button.Group
+                                  vertical
+                                  className="move-buttons"
+                                  key={`footer-item-${idx}`}
+                                  id={`footer-item-${idx}`}
+                                  name={footerColumn.title}
+                                  active={activeFooterColumn === idx}
+                                  onClick={() => setActiveFooterColumn(idx)}
+                                  aria-label={
+                                    intl.formatMessage(messages.column) +
+                                    ' ' +
+                                    (idx + 1) +
+                                    ' ' +
+                                    (footerColumn.title ??
+                                      intl.formatMessage(messages.no_title))
+                                  }
+                                >
                                   <Button
                                     disabled={idx === 0}
                                     size="tiny"
@@ -296,6 +345,7 @@ const FooterConfigurationWidget = ({
                                     title={intl.formatMessage(
                                       messages.moveMenuItemUp,
                                     )}
+                                    // aria-describedby={`footer-item-${idx}`}
                                     onClick={(e) =>
                                       moveMenuItem(e, activeFooter, idx, 'up')
                                     }
@@ -312,6 +362,7 @@ const FooterConfigurationWidget = ({
                                     title={intl.formatMessage(
                                       messages.moveMenuItemDown,
                                     )}
+                                    // aria-describedby={`footer-item-${idx}`}
                                     onClick={(e) =>
                                       moveMenuItem(e, activeFooter, idx, 'down')
                                     }
@@ -322,7 +373,11 @@ const FooterConfigurationWidget = ({
                             ),
                           )}
                           <Menu.Item
+                            as={'button'}
                             name={intl.formatMessage(messages.addFooterColumn)}
+                            aria-label={intl.formatMessage(
+                              messages.addFooterColumn,
+                            )}
                             onClick={(e) => addFooterColumn(e, activeFooter)}
                           >
                             <Icon name="plus" />
@@ -333,32 +388,41 @@ const FooterConfigurationWidget = ({
                         {activeFooterColumn > -1 &&
                         activeFooterColumn <
                           footerConfiguration[activeFooter].items?.length ? (
-                          <FooterConfigurationForm
-                            id={
-                              footerConfiguration[activeFooter].items[
-                                activeFooterColumn
-                              ].id
-                            }
-                            footerColumn={
-                              footerConfiguration[activeFooter].items[
-                                activeFooterColumn
-                              ]
-                            }
-                            onChange={(column) =>
-                              onChangeFooterColumn(
-                                activeFooter,
-                                activeFooterColumn,
-                                column,
-                              )
-                            }
-                            deleteFooterColumn={(e) =>
-                              deleteFooterColumn(
-                                e,
-                                activeFooter,
-                                activeFooterColumn,
-                              )
-                            }
-                          />
+                          <div
+                            id="footerConfigContent"
+                            role="region"
+                            aria-label={intl.formatMessage(
+                              messages.column_content,
+                            )}
+                          >
+                            <FooterConfigurationForm
+                              arial-label="text"
+                              id={
+                                footerConfiguration[activeFooter].items[
+                                  activeFooterColumn
+                                ].id
+                              }
+                              footerColumn={
+                                footerConfiguration[activeFooter].items[
+                                  activeFooterColumn
+                                ]
+                              }
+                              onChange={(column) =>
+                                onChangeFooterColumn(
+                                  activeFooter,
+                                  activeFooterColumn,
+                                  column,
+                                )
+                              }
+                              deleteFooterColumn={(e) =>
+                                deleteFooterColumn(
+                                  e,
+                                  activeFooter,
+                                  activeFooterColumn,
+                                )
+                              }
+                            />
+                          </div>
                         ) : (
                           <span>
                             {intl.formatMessage(
