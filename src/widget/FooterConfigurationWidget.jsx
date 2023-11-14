@@ -345,7 +345,6 @@ const FooterConfigurationWidget = ({
                                     title={intl.formatMessage(
                                       messages.moveMenuItemUp,
                                     )}
-                                    // aria-describedby={`footer-item-${idx}`}
                                     onClick={(e) =>
                                       moveMenuItem(e, activeFooter, idx, 'up')
                                     }
@@ -362,7 +361,6 @@ const FooterConfigurationWidget = ({
                                     title={intl.formatMessage(
                                       messages.moveMenuItemDown,
                                     )}
-                                    // aria-describedby={`footer-item-${idx}`}
                                     onClick={(e) =>
                                       moveMenuItem(e, activeFooter, idx, 'down')
                                     }
