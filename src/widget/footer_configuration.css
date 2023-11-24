@@ -49,11 +49,19 @@
   justify-content: space-between;
   padding-right: 0.75rem;
   padding-left: 0.75rem;
+  margin: 0px 0px 0px 1px !important;
+  width: 100%;
+  cursor: pointer;
+}
+.footer-configuration-widget .ui.menu.footer-items-menu .item:hover,
+.cms-ui .footer-configuration-widget .ui.menu.footer-items-menu .item:hover {
+  background-color: #fafafa !important;
 }
 
 .footer-configuration-widget .ui.menu.footer-items-menu .item span,
 .cms-ui .footer-configuration-widget .ui.menu.footer-items-menu .item span {
   margin-left: 0.5rem;
+  text-align: start;
 }
 
 .footer-configuration-widget .ui.menu.footer-items-menu .item button.ui.button,

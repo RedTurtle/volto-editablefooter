@@ -22,6 +22,21 @@ msgid "editablefooter-addfootercolumn"
 msgstr ""
 
 #: widget/FooterConfigurationWidget
+# defaultMessage: Column
+msgid "editablefooter-column"
+msgstr ""
+
+#: widget/FooterConfigurationWidget
+# defaultMessage: Edit column content
+msgid "editablefooter-column-content"
+msgstr ""
+
+#: widget/FooterConfigurationWidget
+# defaultMessage: Column selection
+msgid "editablefooter-column-selection"
+msgstr ""
+
+#: widget/FooterConfigurationWidget
 # defaultMessage: Delete
 msgid "editablefooter-delete-button"
 msgstr ""
@@ -69,6 +84,11 @@ msgstr ""
 #: widget/FooterConfigurationForm
 # defaultMessage: Show newsletter subscribe form
 msgid "editablefooter-newsletterSubscribe"
+msgstr ""
+
+#: widget/FooterConfigurationWidget
+# defaultMessage: without title
+msgid "editablefooter-no-title"
 msgstr ""
 
 #: widget/FooterConfigurationWidget
