@@ -105,7 +105,11 @@
   padding-left: 0.5rem;
 }
 
-.footer-configuration-widget #footerpath-delete.field.delete .column,
+.footer-configuration-widget #footerpath-delete .column{
+  padding-top: 1rem;
+  flex-direction: row;
+}
+.footer-configuration-widget #footerpath-delete .column,
 .footer-configuration-widget #column-delete.field.delete .column,
 .cms-ui .footer-configuration-widget #footerpath-delete.field.delete .column,
 .cms-ui .footer-configuration-widget #column-delete.field.delete .column {
@@ -125,5 +129,34 @@ button#delete-footercolumn,
 .cms-ui.footer-configuration-widget .footer-rootpath-segment {
   padding-bottom: 3rem;
   border-bottom: 1px solid #c7d5d8;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
+  background-color: #c7d6d8;
+}
+
+.footer-configuration-widget .footer-top-segment,
+.cms-ui.footer-configuration-widget .footer-top-segment {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #c7d5d8;
+}
+
+/* blocks styles for footer top */
+#footerTop .block.image img{
+  height: 75px;
+  width: auto;
+}
+
+.footer-configuration-widget .footer-top-segment .block.gridBlock .grid-items .block-editor-image{
+    width: auto;
+    padding: 0;
+}
+
+.footer-configuration-widget .footer-top-segment .block.gridBlock .slate-editor{
+  margin-top: 0;
+}
+
+.footer-configuration-widget .footer-top-segment .block.gridBlock .two.grid-items [class^='block-editor-']{
+  width: fit-content;
+}
+.footer-configuration-widget .footer-top-segment .block.gridBlock .two.grid-items :not(.block-editor-image){
+  flex: 1 0 0;
 }

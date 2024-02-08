@@ -3,9 +3,11 @@ import FooterConfigurationWidget from './widget/FooterConfigurationWidget';
 import { getEditableFooterColumns } from './actions';
 import { getItemsByPath } from './utils';
 import FooterColumns from './components/FooterColumns';
+import FooterTop from './components/FooterTop';
 
 export {
   FooterConfigurationWidget,
+  FooterTop,
   getEditableFooterColumns,
   FooterColumns,
   getItemsByPath,

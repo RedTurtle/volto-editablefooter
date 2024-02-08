@@ -14,6 +14,7 @@ import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 
 import FooterConfigurationForm from './FooterConfigurationForm';
 import './footer_configuration.css';
+import BlocksWidget from 'volto-blocks-widget/widget/BlocksWidget';
 
 const messages = defineMessages({
   footerItemsHeader: {
@@ -73,6 +74,10 @@ const messages = defineMessages({
     id: 'editablefooter-column-content',
     defaultMessage: 'Edit column content',
   },
+  footer_top:{
+    id: 'editablefooter-footer-top',
+    defaultMessage: 'Intestazione del footer',
+  }
 });
 
 const defaultMenuItem = (title) => ({
@@ -268,10 +273,7 @@ const FooterConfigurationWidget = ({
                         >
                           <Grid>
                             <Grid.Row stretched>
-                              <Grid.Column width={4}>
-                                <div className="wrapper"></div>
-                              </Grid.Column>
-                              <Grid.Column width={8}>
+                              <Grid.Column width={12} className="text-center">
                                 <Button
                                   icon="trash"
                                   negative
@@ -287,6 +289,28 @@ const FooterConfigurationWidget = ({
                             </Grid.Row>
                           </Grid>
                         </Form.Field>
+                      </Grid.Column>
+                      <Grid.Column
+                        width={12}
+                        className="footer-top-segment footer-top"
+                      >
+                          <BlocksWidget
+                            id="footerTop"
+                            title={intl.formatMessage(messages.footer_top)}
+                            description=""
+                            value={
+                              footerConfiguration[activeFooter].footerTop
+                            }
+                            onChange={(id, value) => {
+                              onChangeFooterPath(activeFooter, {
+                                ...footerConfiguration[activeFooter],
+                                footerTop: value,
+                              });
+                            }}
+                            onBlur={()=>{}}
+                            key={'footer_top_'+activeFooter}
+                            allowedBlocks={['text','image','gridBlock']}
+                            />
                       </Grid.Column>
                       <Grid.Column width={4}>
                         <Header as="h2" className="editablefooter-items-header">

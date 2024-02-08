@@ -8,6 +8,7 @@ import { Container, List, Segment } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
 import FooterColumns from '../../../../components/FooterColumns';
+import FooterTop from '../../../../components/FooterTop';
 
 const messages = defineMessages({
   copyright: {
@@ -105,6 +106,7 @@ const Footer = ({ intl }) => (
           </a>
         </div>
       </List>
+      <FooterTop/>
       <FooterColumns />
     </Container>
   </Segment>
