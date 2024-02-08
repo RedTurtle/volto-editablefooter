@@ -1,6 +1,6 @@
 import { editableFooterColumnsReducer } from './reducers';
 import FooterConfigurationWidget from './widget/FooterConfigurationWidget';
-import { getEditableFooterData } from './actions';
+import { getEditableFooterData, getEditableFooterColumns } from './actions';
 import { getItemsByPath } from './utils';
 import FooterColumns from './components/FooterColumns';
 import FooterTop from './components/FooterTop';
@@ -9,6 +9,7 @@ export {
   FooterConfigurationWidget,
   FooterTop,
   getEditableFooterData,
+  getEditableFooterColumns, //backward compatibility it should be removed
   FooterColumns,
   getItemsByPath,
 };
