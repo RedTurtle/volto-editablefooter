@@ -22,6 +22,6 @@ export function getEditableFooterData() {
 }
 
 //backward compatibility, it should be removed
-export function getEditableFooterColumns=()=>{
+export const getEditableFooterColumns=()=>{
   return getEditableFooterData();
 }
