@@ -17,7 +17,7 @@ export function getEditableFooterData() {
     request: {
       op: 'get',
       path: `/@editable-footer-data`,
-    },
+    }
   };
 }
 
