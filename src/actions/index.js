@@ -1,27 +1,21 @@
 /**
- * Editable foooter items actions.
- * @module actions/getEditableFooterData
+ * Dropdown menu items actions.
+ * @module actions/getEditableFooterColumns
  */
-export const GET_EDITABLE_FOOTER_DATA = 'GET_EDITABLE_FOOTER_DATA';
-export const GET_EDITABLE_FOOTER_COLUMNS = GET_EDITABLE_FOOTER_DATA; //backward compatibility, it should be removed
+export const GET_EDITABLE_FOOTER_COLUMNS = 'GET_EDITABLE_FOOTER_COLUMNS';
 
 /**
- * Get editable footer data
- * @function getEditableFooterData
+ * Get dropdown menu items.
+ * @function getEditableFooterColumns
  * @returns {Object} Get footer action.
- * Es: http://localhost:8080/Plone/@editable-footer-data
+ * Es: http://localhost:8080/Plone/@footer-columns
  */
-export function getEditableFooterData() {
+export function getEditableFooterColumns() {
   return {
-    type: GET_EDITABLE_FOOTER_DATA,
+    type: GET_EDITABLE_FOOTER_COLUMNS,
     request: {
       op: 'get',
-      path: `/@editable-footer-data`,
-    }
+      path: `/@footer-columns`,
+    },
   };
-}
-
-//backward compatibility, it should be removed
-export const getEditableFooterColumns=()=>{
-  return getEditableFooterData();
 }

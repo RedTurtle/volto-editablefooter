@@ -7,7 +7,7 @@ import { Segment, Grid } from 'semantic-ui-react';
 import { flattenHTMLToAppURL, flattenToAppURL } from '@plone/volto/helpers';
 import { ConditionalLink } from '@plone/volto/components';
 
-import { getEditableFooterData } from '../actions';
+import { getEditableFooterColumns } from '../actions';
 import { getItemsByPath } from '../utils';
 import Socials from './Socials';
 import NewsletterSubscribe from './NewsletterSubscribe';
@@ -22,7 +22,7 @@ const FooterColumns = ({ footer }) => {
   );
 
   useEffect(() => {
-    dispatch(getEditableFooterData());
+    dispatch(getEditableFooterColumns());
   }, [dispatch, location]);
 
   //filter rootpaths

@@ -1,6 +1,6 @@
 import { editableFooterColumnsReducer } from './reducers';
 import FooterConfigurationWidget from './widget/FooterConfigurationWidget';
-import { getEditableFooterData, getEditableFooterColumns } from './actions';
+import { getEditableFooterColumns } from './actions';
 import { getItemsByPath } from './utils';
 import FooterColumns from './components/FooterColumns';
 import FooterTop from './components/FooterTop';
@@ -8,8 +8,7 @@ import FooterTop from './components/FooterTop';
 export {
   FooterConfigurationWidget,
   FooterTop,
-  getEditableFooterData,
-  getEditableFooterColumns, //backward compatibility it should be removed
+  getEditableFooterColumns,
   FooterColumns,
   getItemsByPath,
 };
@@ -38,7 +37,7 @@ export default (config) => {
           dispatchActions.push({
             key: 'editable-footer',
             promise: ({ location, store: { dispatch } }) =>
-              __SERVER__ && dispatch(getEditableFooterData()),
+              __SERVER__ && dispatch(getEditableFooterColumns()),
           });
         }
         return dispatchActions;
