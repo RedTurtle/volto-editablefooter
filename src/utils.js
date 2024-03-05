@@ -1,5 +1,5 @@
 
-export function getItemsByPath(items, pathname) {
+export function getConfigByPath(items, pathname) {
   let rootPathConfig = null;
   const itemsByPath = items?.reduce((acc, val) => {
     if (val.rootPath === '/') {
@@ -16,7 +16,12 @@ export function getItemsByPath(items, pathname) {
       else return 0;
     });
 
-  if (matchingPaths.length > 0) return itemsByPath[matchingPaths[0]].items;
-  else if (rootPathConfig) return rootPathConfig.items;
-  else return [];
+  if (matchingPaths.length > 0) return itemsByPath[matchingPaths[0]];
+  else if (rootPathConfig) return rootPathConfig;
+  else return {};
+}
+
+export function getItemsByPath(items, pathname) {
+  let config = getConfigByPath(items,pathname);
+  return config?.items ?? [];
 }
