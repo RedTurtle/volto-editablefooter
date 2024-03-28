@@ -74,10 +74,10 @@ const messages = defineMessages({
     id: 'editablefooter-column-content',
     defaultMessage: 'Edit column content',
   },
-  footer_top:{
+  footer_top: {
     id: 'editablefooter-footer-top',
     defaultMessage: 'Intestazione del footer',
-  }
+  },
 });
 
 const defaultMenuItem = (title) => ({
@@ -294,23 +294,21 @@ const FooterConfigurationWidget = ({
                         width={12}
                         className="footer-top-segment footer-top"
                       >
-                          <BlocksWidget
-                            id="footerTop"
-                            title={intl.formatMessage(messages.footer_top)}
-                            description=""
-                            value={
-                              footerConfiguration[activeFooter].footerTop
-                            }
-                            onChange={(id, value) => {
-                              onChangeFooterPath(activeFooter, {
-                                ...footerConfiguration[activeFooter],
-                                footerTop: value,
-                              });
-                            }}
-                            onBlur={()=>{}}
-                            key={'footer_top_'+activeFooter}
-                            allowedBlocks={['text','image','gridBlock']}
-                            />
+                        <BlocksWidget
+                          id="footerTop"
+                          title={intl.formatMessage(messages.footer_top)}
+                          description=""
+                          value={footerConfiguration[activeFooter].footerTop}
+                          onChange={(id, value) => {
+                            onChangeFooterPath(activeFooter, {
+                              ...footerConfiguration[activeFooter],
+                              footerTop: value,
+                            });
+                          }}
+                          onBlur={() => {}}
+                          key={'footer_top_' + activeFooter}
+                          allowedBlocks={['text', 'image', 'gridBlock']}
+                        />
                       </Grid.Column>
                       <Grid.Column width={4}>
                         <Header as="h2" className="editablefooter-items-header">

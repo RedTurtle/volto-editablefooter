@@ -167,9 +167,11 @@ const FooterConfigurationForm = ({
           </Grid.Row>
         </Grid>
       </UIForm.Field>
+      {/*
+      removed because inited from BlocksWidget in FooterConfigurationWidget
       <Portal node={document.getElementById('sidebar')}>
         <Sidebar />
-      </Portal>
+      </Portal> */}
     </>
   );
 };

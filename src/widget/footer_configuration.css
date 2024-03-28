@@ -105,7 +105,7 @@
   padding-left: 0.5rem;
 }
 
-.footer-configuration-widget #footerpath-delete .column{
+.footer-configuration-widget #footerpath-delete .column {
   padding-top: 1rem;
   flex-direction: row;
 }
@@ -140,23 +140,53 @@ button#delete-footercolumn,
 }
 
 /* blocks styles for footer top */
-#footerTop .block.image img{
+#footerTop .block.image img {
   height: 75px;
   width: auto;
 }
 
-.footer-configuration-widget .footer-top-segment .block.gridBlock .grid-items .block-editor-image{
-    width: auto;
-    padding: 0;
+.footer-configuration-widget
+  .footer-top-segment
+  .block.gridBlock
+  .grid-items
+  .block-editor-image {
+  width: auto;
+  padding: 0;
 }
 
-.footer-configuration-widget .footer-top-segment .block.gridBlock .slate-editor{
+.footer-configuration-widget
+  .footer-top-segment
+  .block.gridBlock
+  .slate-editor {
   margin-top: 0;
 }
 
-.footer-configuration-widget .footer-top-segment .block.gridBlock .two.grid-items [class^='block-editor-']{
+.footer-configuration-widget
+  .footer-top-segment
+  .block.gridBlock
+  .two.grid-items
+  [class^='block-editor-'] {
   width: fit-content;
 }
-.footer-configuration-widget .footer-top-segment .block.gridBlock .two.grid-items :not(.block-editor-image){
+.footer-configuration-widget
+  .footer-top-segment
+  .block.gridBlock
+  .two.grid-items
+  :not(.block-editor-image) {
   flex: 1 0 0;
+}
+
+.footer-configuration-widget
+  .block.image
+  .no-image-wrapper
+  .toolbar-inner
+  .ui.buttons:nth-of-type(2),
+.footer-configuration-widget
+  .block.image
+  .no-image-wrapper
+  .toolbar-inner
+  .ui.buttons:nth-of-type(2)
+  + .ui.input {
+  /*nascondo il pulsante di upload immagine perchè non funziona da qui*/
+  display: none;
 }
