@@ -1,5 +1,5 @@
 import { editableFooterColumnsReducer } from './reducers';
-import FooterConfigurationWidget from './widget/FooterConfigurationWidget';
+import { FooterConfigurationWidget } from './widget';
 import { getEditableFooterColumns } from './actions';
 import { getItemsByPath } from './utils';
 import FooterColumns from './components/FooterColumns';

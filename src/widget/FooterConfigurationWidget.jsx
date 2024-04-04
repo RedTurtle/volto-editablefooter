@@ -12,7 +12,7 @@ import {
 import { TextWidget } from '@plone/volto/components';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 
-import FooterConfigurationForm from './FooterConfigurationForm';
+import { FooterConfigurationForm } from './';
 import './footer_configuration.css';
 import BlocksWidget from 'volto-blocks-widget/widget/BlocksWidget';
 
