@@ -10,6 +10,9 @@
     "@plone/scripts": "^2.0.0",
     "release-it": "^14.10.1"
   },
+  "addons": [
+    "volto-blocks-widget"
+  ],
   "scripts": {
     "i18n": "rm -rf build/messages && NODE_ENV=production i18n -a",
     "release": "release-it"
