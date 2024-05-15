@@ -1,5 +1,5 @@
-
 export function getConfigByPath(items, pathname) {
+  console.log('getConfigByPath', items, pathname);
   let rootPathConfig = null;
   const itemsByPath = items?.reduce((acc, val) => {
     if (val.rootPath === '/') {
@@ -22,6 +22,6 @@ export function getConfigByPath(items, pathname) {
 }
 
 export function getItemsByPath(items, pathname) {
-  let config = getConfigByPath(items,pathname);
+  let config = getConfigByPath(items, pathname);
   return config?.items ?? [];
 }

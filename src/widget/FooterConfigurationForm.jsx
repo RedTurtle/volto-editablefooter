@@ -4,10 +4,9 @@ import { Form as UIForm, Grid, Button } from 'semantic-ui-react';
 import {
   TextWidget,
   CheckboxWidget,
-  Sidebar,
   ObjectBrowserWidget,
 } from '@plone/volto/components';
-import { Portal } from 'react-portal';
+
 import config from '@plone/volto/registry';
 
 const messages = defineMessages({
