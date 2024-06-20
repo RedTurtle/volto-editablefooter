@@ -63,11 +63,14 @@ const FooterColumns = ({ footer }) => {
               </h4>
               {column.showSocial && <Socials />}
               {column.newsletterSubscribe && <NewsletterSubscribe />}
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: flattenHTMLToAppURL(column.text.data),
-                }}
-              />
+
+              {column.text && (
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: flattenHTMLToAppURL(column.text.data),
+                  }}
+                />
+              )}
             </Grid.Column>
           ))}
       </Grid>
