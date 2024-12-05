@@ -74,6 +74,11 @@
   text-align: center;
 }
 
+body.cms-ui .footer-configuration-widget .ui.pointing.secondary.menu,
+.footer-configuration-widget .ui.pointing.secondary.menu {
+  flex-wrap: wrap;
+}
+
 .footer-configuration-widget
   .ui.menu.footer-items-menu
   .item
