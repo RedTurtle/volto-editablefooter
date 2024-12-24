@@ -4,8 +4,11 @@ import { useLocation } from 'react-router-dom';
 
 import { Grid } from 'semantic-ui-react';
 
-import { flattenHTMLToAppURL, flattenToAppURL } from '@plone/volto/helpers';
-import { ConditionalLink } from '@plone/volto/components';
+import {
+  flattenHTMLToAppURL,
+  flattenToAppURL,
+} from '@plone/volto/helpers/Url/Url';
+import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
 
 import { getEditableFooterColumns } from '../actions';
 import { getItemsByPath } from '../utils';

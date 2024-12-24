@@ -9,7 +9,7 @@ import {
   Segment,
   Header,
 } from 'semantic-ui-react';
-import { TextWidget } from '@plone/volto/components';
+import { TextWidget } from '@plone/volto/components/manage/Widgets';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 
 import { FooterConfigurationForm } from './';

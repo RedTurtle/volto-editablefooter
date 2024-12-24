@@ -5,7 +5,7 @@ import {
   TextWidget,
   CheckboxWidget,
   ObjectBrowserWidget,
-} from '@plone/volto/components';
+} from '@plone/volto/components/manage/Widgets';
 
 import config from '@plone/volto/registry';
 
