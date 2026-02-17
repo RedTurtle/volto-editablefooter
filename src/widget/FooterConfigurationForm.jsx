@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import { Form as UIForm, Grid, Button } from 'semantic-ui-react';
-import {
-  TextWidget,
-  CheckboxWidget,
-  ObjectBrowserWidget,
-} from '@plone/volto/components/manage/Widgets';
+
+import TextWidget from '@plone/volto/components/manage/Widgets/TextWidget';
+import CheckboxWidget from '@plone/volto/components/manage/Widgets/CheckboxWidget';
+import ObjectBrowserWidget from '@plone/volto/components/manage/Widgets/ObjectBrowserWidget';
 
 import config from '@plone/volto/registry';
 
