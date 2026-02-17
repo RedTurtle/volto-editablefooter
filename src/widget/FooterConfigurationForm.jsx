@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import { Form as UIForm, Grid, Button } from 'semantic-ui-react';
-
 import TextWidget from '@plone/volto/components/manage/Widgets/TextWidget';
 import CheckboxWidget from '@plone/volto/components/manage/Widgets/CheckboxWidget';
 import ObjectBrowserWidget from '@plone/volto/components/manage/Widgets/ObjectBrowserWidget';
@@ -52,39 +51,24 @@ const FooterConfigurationForm = ({
   const intl = useIntl();
   const RichTextWidget = config.widgets.widget.richtext;
 
-  const preventClick = (e) => {
-    e.preventDefault();
-  };
-
   const preventEnter = (e) => {
     if (e.code === 'Enter') {
-      preventClick(e);
+      e.preventDefault();
     }
   };
 
   useEffect(() => {
-    document
-      .querySelector('form.ui.form')
-      .addEventListener('click', preventClick);
-
     document.querySelectorAll('form.ui.form input').forEach((item) => {
       item.addEventListener('keypress', preventEnter);
     });
 
     return () => {
-      const form = document.querySelector('form.ui.form');
-      const input = document.querySelectorAll('form.ui.form input');
-      if (form) {
-        form.removeEventListener('click', preventClick);
-      }
-      if (input?.length > 0) {
-        input.forEach((item) => {
-          item.removeEventListener('keypress', preventEnter);
-        });
-      }
+      document.querySelectorAll('form.ui.form input').forEach((item) => {
+        item?.removeEventListener('keypress', preventEnter);
+      });
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
   const onChangeFormData = (id, value) => {
     onChange({ ...footerColumn, [id]: value });
   };
