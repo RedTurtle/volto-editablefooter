@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
@@ -23,24 +23,36 @@ const FooterColumns = ({ footer }) => {
   const location = useLocation();
   const dispatch = useDispatch();
 
+  const [footerColumns, setFooterColumns] = useState([]);
+  const [ncolumns, setNColumns] = useState(N_COLUMNS);
+
+  const confLoading = useSelector(
+    (state) => state.editableFooterColumns.loadingResults,
+  );
+
   const footerConfiguration = useSelector(
     (state) => state.editableFooterColumns?.result,
   );
 
   useEffect(() => {
-    if (!footerConfiguration) {
+    if (!footerConfiguration && !confLoading) {
       dispatch(getEditableFooterColumns());
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  //filter rootpaths
-  const footerColumns = getItemsByPath(
-    footerConfiguration,
-    location?.pathname?.length ? location.pathname : '/',
-  );
+  useEffect(() => {
+    //filter rootpaths
+    const fc = getItemsByPath(
+      footerConfiguration,
+      location?.pathname?.length ? location.pathname : '/',
+    );
+    const nc = fc.length < N_COLUMNS ? fc.length : N_COLUMNS;
+    setFooterColumns(fc);
+    setNColumns(nc);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [footerConfiguration, location]);
 
-  const ncolumns =
-    footerColumns.length < N_COLUMNS ? footerColumns.length : N_COLUMNS;
   return (
     <div className="footer-columns">
       <Grid>

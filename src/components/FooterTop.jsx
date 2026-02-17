@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
@@ -11,30 +11,40 @@ const FooterTop = () => {
   const location = useLocation();
   const dispatch = useDispatch();
 
+  const [footerTopData, setFooterTopData] = useState([]);
+
+  const confLoading = useSelector(
+    (state) => state.editableFooterColumns.loadingResults,
+  );
+
   const footerConfiguration = useSelector(
     (state) => state.editableFooterColumns?.result,
   );
 
   useEffect(() => {
-    dispatch(getEditableFooterColumns());
-  }, [dispatch, location]);
+    if (!footerConfiguration && !confLoading) {
+      dispatch(getEditableFooterColumns());
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  //filter rootpaths
-  const FooterConfig = getConfigByPath(
-    footerConfiguration,
-    location?.pathname?.length ? location.pathname : '/',
-  );
+  useEffect(() => {
+    //filter rootpaths
+    const FooterConfig = getConfigByPath(
+      footerConfiguration,
+      location?.pathname?.length ? location.pathname : '/',
+    );
 
-  const footer_top_data = FooterConfig.footerTop;
+    setFooterTopData(FooterConfig.footerTop);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [footerConfiguration, location]);
 
-  let content_to_display = footer_top_data
+  return footerTopData
     ? RichTextRender({
-        data: footer_top_data,
+        data: footerTopData,
         add_class: 'footerTop',
       })
     : null;
-
-  return content_to_display ? <>{content_to_display}</> : null;
 };
 
 export default FooterTop;
