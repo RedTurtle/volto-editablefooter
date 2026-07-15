@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
@@ -10,8 +10,6 @@ import { RichTextRender } from 'volto-blocks-widget';
 const FooterTop = () => {
   const location = useLocation();
   const dispatch = useDispatch();
-
-  const [footerTopData, setFooterTopData] = useState([]);
 
   const confLoading = useSelector(
     (state) => state.editableFooterColumns.loadingResults,
@@ -28,23 +26,14 @@ const FooterTop = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    //filter rootpaths
-    const FooterConfig = getConfigByPath(
-      footerConfiguration,
-      location?.pathname?.length ? location.pathname : '/',
-    );
+  const footerTopData = getConfigByPath(
+    footerConfiguration,
+    location?.pathname?.length ? location.pathname : '/',
+  )?.footerTop;
 
-    setFooterTopData(FooterConfig.footerTop);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [footerConfiguration, location]);
-
-  return footerTopData
-    ? RichTextRender({
-        data: footerTopData,
-        add_class: 'footerTop',
-      })
-    : null;
+  return footerTopData ? (
+    <RichTextRender data={footerTopData} add_class="footerTop" />
+  ) : null;
 };
 
 export default FooterTop;
