@@ -62,12 +62,15 @@ const FooterConfigurationForm = ({
     };
 
     // global handler to stop Enter from submitting inputs
-    // exception: slate_wysiwyg_box (to add slate text)
+    // exception: slate_wysiwyg_box (to add slate text) and blocks-widget
+    // (footerTop blocks editor), where Enter never triggers a submit
     const handleEnter = (e) => {
       if (e.key === 'Enter') {
         const targetForm = e.target.closest('form.ui.form');
         if (targetForm) {
-          const inBlocks = e.target.closest('.slate_wysiwyg_box');
+          const inBlocks = e.target.closest(
+            '.slate_wysiwyg_box, .blocks-widget',
+          );
           if (inBlocks) {
             // allow enter to add blocks (React/Volto create new blocks)
             return;
