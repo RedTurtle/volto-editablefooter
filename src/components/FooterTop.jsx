@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
@@ -27,6 +27,8 @@ const FooterTop = () => {
   const location = useLocation();
   const dispatch = useDispatch();
 
+  const [footerTopData, setFooterTopData] = useState(null);
+
   const confLoading = useSelector(
     (state) => state.editableFooterColumns.loadingResults,
   );
@@ -42,10 +44,16 @@ const FooterTop = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const footerTopData = getConfigByPath(
-    footerConfiguration,
-    location?.pathname?.length ? location.pathname : '/',
-  )?.footerTop;
+  useEffect(() => {
+    //filter rootpaths
+    const FooterConfig = getConfigByPath(
+      footerConfiguration,
+      location?.pathname?.length ? location.pathname : '/',
+    );
+
+    setFooterTopData(FooterConfig?.footerTop);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [footerConfiguration, location]);
 
   return hasFooterTopContent(footerTopData) ? (
     <RichTextRender data={footerTopData} add_class="footerTop" />
