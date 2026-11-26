@@ -7,11 +7,27 @@ import { getConfigByPath } from '../utils';
 
 import { RichTextRender } from 'volto-blocks-widget';
 
+/**
+ * True if footerTop has something to show; an empty slate paragraph counts as empty.
+ */
+const hasFooterTopContent = (data) => {
+  if (data?.blocks_layout) {
+    return (data.blocks_layout.items ?? []).some((blockId) => {
+      const block = data.blocks?.[blockId];
+      if (!block?.['@type']) return false;
+      if (block['@type'] === 'slate') return !!block.plaintext?.trim();
+      if (block['@type'] === 'text') return !!block.text;
+      return true;
+    });
+  }
+  return !!data?.data?.replace(/(<([^>]+)>)/g, '').trim();
+};
+
 const FooterTop = () => {
   const location = useLocation();
   const dispatch = useDispatch();
 
-  const [footerTopData, setFooterTopData] = useState([]);
+  const [footerTopData, setFooterTopData] = useState(null);
 
   const confLoading = useSelector(
     (state) => state.editableFooterColumns.loadingResults,
@@ -35,16 +51,13 @@ const FooterTop = () => {
       location?.pathname?.length ? location.pathname : '/',
     );
 
-    setFooterTopData(FooterConfig.footerTop);
+    setFooterTopData(FooterConfig?.footerTop);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [footerConfiguration, location]);
 
-  return footerTopData
-    ? RichTextRender({
-        data: footerTopData,
-        add_class: 'footerTop',
-      })
-    : null;
+  return hasFooterTopContent(footerTopData) ? (
+    <RichTextRender data={footerTopData} add_class="footerTop" />
+  ) : null;
 };
 
 export default FooterTop;
