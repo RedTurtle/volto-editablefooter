@@ -3,7 +3,10 @@
   "version": "5.1.12",
   "description": "Volto addon for a customizable footer",
   "main": "src/index.js",
-  "repository": "https://github.com/RedTurtle/volto-editablefooter.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RedTurtle/volto-editablefooter.git"
+  },
   "author": "collective",
   "license": "MIT",
   "devDependencies": {
@@ -13,6 +16,9 @@
   "addons": [
     "volto-blocks-widget"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "i18n": "rm -rf build/messages && NODE_ENV=production i18n -a",
     "release": "release-it"
